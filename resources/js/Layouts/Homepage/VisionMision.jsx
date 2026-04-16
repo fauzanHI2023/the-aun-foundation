@@ -9,37 +9,37 @@ export function VisionMission() {
         {
             number: "01",
             title: "Education Access",
-            tag: "Akses Pendidikan",
+            tag: "Access to Education",
             color: "#ef1968",
         },
         {
             number: "02",
             title: "Economic Empowerment",
-            tag: "Kemandirian Ekonomi",
+            tag: "Economic Self-Reliance",
             color: "#f7c498",
         },
         {
             number: "03",
             title: "Health Enhancement",
-            tag: "Kesehatan Holistik",
+            tag: "Holistic Health",
             color: "#ef1968",
         },
         {
             number: "04",
             title: "Social Protection",
-            tag: "Perlindungan Sosial",
+            tag: "Social Protection",
             color: "#f7c498",
         },
         {
             number: "05",
             title: "Environmental Advancement",
-            tag: "Keberlanjutan Lingkungan",
+            tag: "Environmental Sustainability",
             color: "#ef1968",
         },
         {
             number: "06",
             title: "Humanitarian Implementation",
-            tag: "Program Kemanusiaan",
+            tag: "Humanitarian Programs",
             color: "#f7c498",
         },
     ];
@@ -86,7 +86,7 @@ export function VisionMission() {
                                         borderRadius: "20px 20px 20px 4px",
                                     }}
                                 >
-                                    VISI KAMI
+                                    OUR VISION
                                 </motion.div>
 
                                 <h2 className="text-5xl md:text-7xl font-bold leading-[1.1] mb-6">
@@ -103,11 +103,11 @@ export function VisionMission() {
                             </div>
 
                             <p className="text-xl text-gray-600 leading-relaxed">
-                                Martabat adalah fondasi pembangunan
-                                berkelanjutan. Dengan menjaga martabat melalui
-                                akses pendidikan, kesehatan, keamanan, dan
-                                lingkungan sehat, kami membangun masa depan yang
-                                lebih adil dan manusiawi.
+                                Dignity is the foundation of sustainable
+                                development. By upholding dignity through access
+                                to education, healthcare, safety, and a healthy
+                                environment, we are building a future that is
+                                more just and humane.
                             </p>
 
                             <motion.button
@@ -116,7 +116,7 @@ export function VisionMission() {
                                 className="bg-[#ef1968] text-white px-8 py-4 font-bold flex items-center gap-3 group"
                                 style={{ borderRadius: "24px 24px 24px 4px" }}
                             >
-                                <span>Pelajari Lebih Lanjut</span>
+                                <span>Learn More</span>
                                 <ArrowRight
                                     size={20}
                                     className="group-hover:translate-x-1 transition-transform"
@@ -153,7 +153,7 @@ export function VisionMission() {
                                         100%
                                     </div>
                                     <div className="text-sm text-gray-600 font-medium">
-                                        Komitmen
+                                        Commitment
                                     </div>
                                 </motion.div>
 
@@ -174,7 +174,7 @@ export function VisionMission() {
                                         </div>
                                     </div>
                                     <div className="text-sm font-medium">
-                                        Harapan Baru
+                                        New Hope
                                     </div>
                                 </motion.div>
                             </motion.div>
@@ -197,7 +197,7 @@ export function VisionMission() {
                             viewport={{ once: true }}
                             className="text-4xl md:text-5xl font-bold text-gray-900 mb-3"
                         >
-                            6 Misi Utama
+                            6 Core Missions
                         </motion.h2>
                         <motion.p
                             initial={{ opacity: 0, y: 30 }}
@@ -206,7 +206,7 @@ export function VisionMission() {
                             transition={{ delay: 0.2 }}
                             className="text-base text-gray-600"
                         >
-                            Fondasi martabat berkelanjutan
+                            The Foundation of Sustainable Dignity
                         </motion.p>
                     </div>
 

@@ -10,14 +10,14 @@ import {
 
 export function StrategicApproach() {
     return (
-        <section className="py-32 bg-gradient-to-b from-white to-gray-50">
+        <section className="py-12 md:py-20 lg:py-32 bg-gradient-to-b from-white to-gray-50">
             <div className="container mx-auto px-6 md:px-12">
                 {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-center mb-20"
+                    className="text-center mb-10 md:mb-14 lg:mb-20"
                 >
                     <div className="inline-flex items-center gap-3 mb-6">
                         <div className="w-12 h-1 bg-gradient-to-r from-[#ef1968] to-[#f7c498]" />
@@ -26,7 +26,7 @@ export function StrategicApproach() {
                         </p>
                         <div className="w-12 h-1 bg-gradient-to-r from-[#f7c498] to-[#ef1968]" />
                     </div>
-                    <h2 className="text-5xl md:text-7xl font-bold">
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold">
                         Strategic
                         <br />
                         <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#ef1968] to-[#f7c498]">

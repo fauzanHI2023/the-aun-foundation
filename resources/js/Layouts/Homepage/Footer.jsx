@@ -1,28 +1,33 @@
 import { motion } from "framer-motion";
-import { Heart } from "lucide-react";
+import {
+    Heart,
+    Mail,
+    MapPin,
+    Phone,
+    Facebook,
+    Instagram,
+    Twitter,
+    Linkedin,
+    Youtube,
+    MessageCircle,
+} from "lucide-react";
 
 export function Footer() {
     const currentYear = new Date().getFullYear();
 
     const footerLinks = {
-        about: [
-            { name: "Tentang Kami", href: "#" },
-            { name: "Tim Kami", href: "#" },
-            { name: "Laporan Tahunan", href: "#" },
-            { name: "Karir", href: "#" },
+        main: [
+            { name: "About Us", href: "/about" },
+            { name: "Program", href: "/programs" },
+            { name: "News", href: "/news" },
+            { name: "Volunteer", href: "/volunteer" },
         ],
         programs: [
-            { name: "RISE", href: "#" },
-            { name: "THRIVE", href: "#" },
-            { name: "CARE+", href: "#" },
-            { name: "SHIELD", href: "#" },
-            { name: "GREENLIGHT", href: "#" },
-        ],
-        resources: [
-            { name: "Blog", href: "#" },
-            { name: "Publikasi", href: "#" },
-            { name: "Media Kit", href: "#" },
-            { name: "FAQ", href: "#" },
+            { name: "RISE", href: "/programs#rise" },
+            { name: "THRIVE", href: "/programs#thrive" },
+            { name: "CARE+", href: "/programs#care" },
+            { name: "SHIELD", href: "/programs#shield" },
+            { name: "GREENLIGHT", href: "/programs#greenlight" },
         ],
         legal: [
             { name: "Kebijakan Privasi", href: "#" },
@@ -30,6 +35,24 @@ export function Footer() {
             { name: "Transparansi", href: "#" },
         ],
     };
+
+    const socialMedia = [
+        {
+            name: "Email",
+            icon: Mail,
+            href: "mailto:contact@rembulanrelief.org",
+            color: "#1877f2",
+        },
+        { name: "Instagram", icon: Instagram, href: "#", color: "#e4405f" },
+        {
+            name: "Whatsapp",
+            icon: MessageCircle,
+            href: "https://wa.me/81539949979",
+            color: "#1da1f2",
+        },
+        { name: "LinkedIn", icon: Linkedin, href: "#", color: "#0a66c2" },
+        { name: "YouTube", icon: Youtube, href: "#", color: "#ff0000" },
+    ];
 
     return (
         <footer className="relative bg-gradient-to-b from-gray-900 to-black text-white overflow-hidden">
@@ -43,11 +66,11 @@ export function Footer() {
                 className="absolute top-0 right-0 w-96 h-96 bg-[#ef1968] rounded-full blur-3xl"
             />
 
-            <div className="container mx-auto px-4 md:px-6 py-16 relative z-10">
+            <div className="container mx-auto px-6 md:px-12 py-16 relative z-10">
                 {/* Top Section */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
-                    {/* Brand Column */}
-                    <div className="lg:col-span-1">
+                <div className="grid md:grid-cols-2 lg:grid-cols-12 gap-8 mb-12">
+                    {/* Brand & About Column - 4 cols */}
+                    <div className="lg:col-span-4">
                         <div className="flex items-center gap-3 mb-4">
                             <div className="flex flex-col">
                                 <img
@@ -57,20 +80,57 @@ export function Footer() {
                                 />
                             </div>
                         </div>
-                        <p className="text-gray-400 text-sm leading-relaxed">
+                        <p className="text-sm text-gray-300 mb-2 font-semibold">
                             Dignity for a Better Future
                         </p>
+                        <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                            Rembulan Relief Nusantara is dedicated to empowering
+                            women and children through education, healthcare,
+                            protection, and environmental sustainability. We
+                            believe lasting change comes through collective
+                            action and human dignity.
+                        </p>
+
+                        {/* Contact Info */}
+                        <div className="space-y-3">
+                            <div className="flex items-start gap-3 text-sm text-gray-400">
+                                <MapPin
+                                    size={16}
+                                    className="text-[#ef1968] mt-0.5 flex-shrink-0"
+                                />
+                                <span>
+                                    Jl. Merdeka Raya No. 123, Jakarta Pusat, DKI
+                                    Jakarta 10110, Indonesia
+                                </span>
+                            </div>
+                            <div className="flex items-center gap-3 text-sm text-gray-400">
+                                <Phone
+                                    size={16}
+                                    className="text-[#ef1968] flex-shrink-0"
+                                />
+                                <span>+62 21 1234 5678</span>
+                            </div>
+                            <div className="flex items-center gap-3 text-sm text-gray-400">
+                                <Mail
+                                    size={16}
+                                    className="text-[#ef1968] flex-shrink-0"
+                                />
+                                <span>contact@rembulanrelief.org</span>
+                            </div>
+                        </div>
                     </div>
 
-                    {/* Links Columns */}
-                    <div>
-                        <h4 className="font-bold mb-4 text-white">Tentang</h4>
+                    {/* Main Menu - 2 cols */}
+                    <div className="lg:col-span-2">
+                        <h4 className="font-bold mb-4 text-white">
+                            Menu Utama
+                        </h4>
                         <ul className="space-y-2">
-                            {footerLinks.about.map((link) => (
+                            {footerLinks.main.map((link) => (
                                 <li key={link.name}>
                                     <a
                                         href={link.href}
-                                        className="text-gray-400 hover:text-[#ef1968] transition-colors text-sm"
+                                        className="text-gray-400 hover:text-[#ef1968] transition-colors text-sm block"
                                     >
                                         {link.name}
                                     </a>
@@ -79,8 +139,11 @@ export function Footer() {
                         </ul>
                     </div>
 
-                    <div>
-                        <h4 className="font-bold mb-4 text-white">Program</h4>
+                    {/* Programs - 2 cols */}
+                    <div className="lg:col-span-2">
+                        <h4 className="font-bold mb-4 text-white">
+                            Program Kami
+                        </h4>
                         <ul className="space-y-2">
                             {footerLinks.programs.map((link) => (
                                 <li key={link.name}>
@@ -95,12 +158,11 @@ export function Footer() {
                         </ul>
                     </div>
 
-                    <div>
-                        <h4 className="font-bold mb-4 text-white">
-                            Sumber Daya
-                        </h4>
-                        <ul className="space-y-2">
-                            {footerLinks.resources.map((link) => (
+                    {/* Legal & Social - 2 cols */}
+                    <div className="lg:col-span-2">
+                        <h4 className="font-bold mb-4 text-white">Legal</h4>
+                        <ul className="space-y-2 mb-6">
+                            {footerLinks.legal.map((link) => (
                                 <li key={link.name}>
                                     <a
                                         href={link.href}
@@ -113,20 +175,56 @@ export function Footer() {
                         </ul>
                     </div>
 
-                    <div>
-                        <h4 className="font-bold mb-4 text-white">Legal</h4>
-                        <ul className="space-y-2">
-                            {footerLinks.legal.map((link) => (
-                                <li key={link.name}>
+                    {/* Social Media - 2 cols */}
+                    <div className="lg:col-span-2">
+                        <h4 className="font-bold mb-4 text-white">
+                            Ikuti Kami
+                        </h4>
+                        <div className="flex flex-wrap gap-3">
+                            {socialMedia.map((social) => {
+                                const Icon = social.icon;
+                                return (
                                     <a
-                                        href={link.href}
-                                        className="text-gray-400 hover:text-[#ef1968] transition-colors text-sm"
+                                        key={social.name}
+                                        href={social.href}
+                                        className="w-10 h-10 bg-gray-800 hover:bg-[#ef1968] flex items-center justify-center transition-all duration-300 group"
+                                        style={{
+                                            borderRadius: "10px 10px 10px 2px",
+                                        }}
+                                        aria-label={social.name}
                                     >
-                                        {link.name}
+                                        <Icon
+                                            size={18}
+                                            className="text-gray-400 group-hover:text-white transition-colors"
+                                        />
                                     </a>
-                                </li>
-                            ))}
-                        </ul>
+                                );
+                            })}
+                        </div>
+
+                        {/* Newsletter */}
+                        {/* <div className="mt-6">
+                            <h5 className="font-semibold text-sm mb-2 text-white">
+                                Newsletter
+                            </h5>
+                            <p className="text-xs text-gray-400 mb-3">
+                                Dapatkan update terbaru tentang program kami
+                            </p>
+                            <div className="flex gap-2">
+                                <input
+                                    type="email"
+                                    placeholder="Email Anda"
+                                    className="flex-1 px-3 py-2 bg-gray-800 border border-gray-700 text-white text-sm focus:outline-none focus:border-[#ef1968] transition-colors"
+                                    style={{ borderRadius: "8px 8px 8px 2px" }}
+                                />
+                                <button
+                                    className="px-4 py-2 bg-[#ef1968] hover:bg-[#d01558] text-white text-xs font-bold transition-colors"
+                                    style={{ borderRadius: "8px 8px 8px 2px" }}
+                                >
+                                    Subscribe
+                                </button>
+                            </div>
+                        </div> */}
                     </div>
                 </div>
 
@@ -145,7 +243,7 @@ export function Footer() {
                         transition={{ duration: 2, repeat: Infinity }}
                         className="flex items-center gap-2 text-sm text-gray-400"
                     >
-                        <span>Made with AltoStd</span>
+                        <span>Made with</span>
                         <Heart
                             className="text-[#ef1968]"
                             size={16}

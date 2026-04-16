@@ -31,9 +31,9 @@ export function HeroSection() {
                             </h1>
 
                             <p className="text-base md:text-2xl text-gray-600 leading-relaxed max-w-2xl">
-                                Memberdayakan perempuan dan anak Indonesia
-                                melalui pendidikan, kesehatan, ekonomi, dan
-                                perlindungan sosial yang berkelanjutan.
+                                Empowering Indonesian women and children through
+                                sustainable education, health, economic
+                                opportunities, and social protection.
                             </p>
                         </motion.div>
 
@@ -67,7 +67,7 @@ export function HeroSection() {
                                     ∞
                                 </div>
                                 <div className="text-xs lg:text-sm text-gray-600 uppercase tracking-wide">
-                                    Harapan Baru
+                                    New Hope
                                 </div>
                             </div>
                         </motion.div>
@@ -86,7 +86,7 @@ export function HeroSection() {
                                 className="bg-[#ef1968] text-white px-6 lg:px-10 py-3 lg:py-5 font-bold text-sm lg:text-lg flex items-center gap-2 lg:gap-3 group"
                                 style={{ borderRadius: "24px 24px 24px 4px" }}
                             >
-                                <span>Mulai Berkolaborasi</span>
+                                <span>Start Collaborating</span>
                                 <ArrowRight
                                     size={18}
                                     className="lg:size-[22px] group-hover:translate-x-1 transition-transform"
@@ -100,7 +100,7 @@ export function HeroSection() {
                                 className="bg-white text-gray-900 px-6 lg:px-10 py-3 lg:py-5 border-2 border-gray-900 font-bold text-sm lg:text-lg hover:bg-gray-900 hover:text-white transition-all"
                                 style={{ borderRadius: "4px 24px 24px 24px" }}
                             >
-                                Pelajari Program
+                                Learn About the Program
                             </MotionLink>
                         </motion.div>
                     </div>
@@ -133,7 +133,7 @@ export function HeroSection() {
                                     <div className="flex items-center justify-between">
                                         <div>
                                             <div className="text-xs lg:text-sm text-gray-600 mb-1">
-                                                Program Unggulan
+                                                Flagship Program
                                             </div>
                                             <div className="text-lg lg:text-xl font-bold text-[#ef1968]">
                                                 RISE

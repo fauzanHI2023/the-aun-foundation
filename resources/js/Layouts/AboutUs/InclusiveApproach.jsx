@@ -11,16 +11,19 @@ export function InclusiveApproach() {
     const y1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
 
     return (
-        <section className="py-32 relative overflow-hidden" ref={containerRef}>
+        <section
+            className="py-12 md:py-20 lg:py-32 relative overflow-hidden"
+            ref={containerRef}
+        >
             <div className="container mx-auto px-6 md:px-12">
-                <div className="grid lg:grid-cols-2 gap-20 items-center">
+                <div className="grid lg:grid-cols-2 gap-10 md:gap-16 lg:gap-20 items-center">
                     {/* Left Text */}
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="space-y-8"
+                        className="space-y-4 md:space-y-6 lg:space-y-8"
                     >
                         <div className="inline-block">
                             <div
@@ -70,7 +73,7 @@ export function InclusiveApproach() {
 
                     {/* Right Images Collage */}
                     <motion.div
-                        style={{ y: y1 }}
+                        // style={{ y: y1 }}
                         className="relative h-[500px]"
                     >
                         <div className="absolute top-0 left-0 w-[55%] h-[60%]">

@@ -3,7 +3,7 @@ import { Circle } from "lucide-react";
 
 export function RembulanSymbol() {
     return (
-        <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
+        <section className="py-12 md:py-20 lg;py-20 bg-gradient-to-b from-gray-50 to-white">
             <div className="container mx-auto px-6 md:px-12">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}

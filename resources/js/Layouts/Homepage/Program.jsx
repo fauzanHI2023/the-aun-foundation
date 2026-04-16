@@ -8,7 +8,7 @@ export function Programs() {
             number: "01",
             acronym: "RISE",
             fullName: "Education for All",
-            description: "Akses pendidikan inklusif untuk perempuan dan anak",
+            description: "Access to inclusive education for women and children",
             color: "#ef1968",
         },
         {
@@ -17,7 +17,7 @@ export function Programs() {
             acronym: "THRIVE",
             fullName: "Economic Empowerment",
             description:
-                "Pemberdayaan ekonomi melalui keterampilan dan akses modal",
+                "Economic empowerment through skills and access to capital",
             color: "#f7c498",
         },
     ];
@@ -40,22 +40,22 @@ export function Programs() {
                         className="inline-block px-5 py-2 bg-[#ef1968]/10 text-[#ef1968] font-bold text-sm mb-6"
                         style={{ borderRadius: "20px 20px 20px 4px" }}
                     >
-                        PROGRAM KAMI
+                        OUR PROGRAM
                     </div>
                     <h2 className="text-3xl md:text-6xl font-bold text-gray-900 mb-4 md:mb-6">
-                        Lima Pilar Transformasi
+                        The Five Pillars of Transformation
                     </h2>
                     <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-4">
-                        Kami menghadirkan{" "}
+                        We present{" "}
                         <span className="font-bold text-[#ef1968]">
-                            5 program pemberdayaan
+                            5 empowerment programs
                         </span>{" "}
-                        yang dirancang khusus untuk perempuan dan anak
-                        Indonesia. Setiap pilar adalah komitmen nyata untuk
-                        menciptakan perubahan berkelanjutan.
+                        designed specifically for women and children in
+                        Indonesia. Each pillar represents a concrete commitment
+                        to creating sustainable change.
                     </p>
                     <p className="text-base text-gray-600">
-                        Mari kenali lebih dekat dua program utama kami:
+                        Lets take a closer look at our two main programs:
                     </p>
                 </motion.div>
 
@@ -180,16 +180,16 @@ export function Programs() {
                     {/* Teaser for 3 more programs */}
                     <div className="max-w-3xl mx-auto text-center mb-8">
                         <p className="text-gray-700 text-lg mb-2">
-                            Masih ada{" "}
+                            There are still{" "}
                             <span className="font-bold text-[#ef1968]">
-                                3 program lainnya
+                                3 other programs
                             </span>{" "}
-                            yang menanti untuk Anda eksplorasi
+                            waiting for you to explore
                         </p>
                         <p className="text-gray-600">
-                            CARE+, SHIELD, dan GREENLIGHT — temukan bagaimana
-                            setiap pilar saling menguatkan untuk menciptakan
-                            dampak transformatif
+                            CARE+, SHIELD, and GREENLIGHT — discover how each
+                            pillar reinforces the others to create a
+                            transformative impact
                         </p>
                     </div>
 
@@ -199,7 +199,7 @@ export function Programs() {
                         className="bg-[#ef1968] text-white px-10 py-5 font-bold text-lg flex items-center gap-3 mx-auto group"
                         style={{ borderRadius: "32px 32px 32px 6px" }}
                     >
-                        <span>Jelajahi Semua 5 Program</span>
+                        <span>Explore All 5 Programs</span>
                         <ArrowRight
                             size={24}
                             className="group-hover:translate-x-1 transition-transform"

@@ -61,18 +61,18 @@ const missions = [
 
 export function MissionsSection() {
     return (
-        <section className="py-20 bg-black text-white overflow-hidden">
+        <section className="py-12 md:py-16 lg:py-20 bg-black text-white overflow-hidden">
             <div className="container mx-auto px-6 md:px-12">
-                <div className="mb-12">
+                <div className="mb-8 md:mb-12">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                     >
-                        <p className="text-[#f7c498] text-sm uppercase tracking-widest mb-4">
+                        <p className="text-[#f7c498] text-xs md:text-sm uppercase tracking-widest mb-3 md:mb-4">
                             Vision & Mission
                         </p>
-                        <h2 className="text-4xl md:text-5xl font-bold max-w-3xl">
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold max-w-3xl">
                             6 Main Missions to Realize Our Vision
                         </h2>
                     </motion.div>
@@ -126,7 +126,7 @@ export function MissionsSection() {
                                             />
                                         </div> */}
 
-                                        <h3 className="text-2xl font-bold">
+                                        <h3 className="text-xl md:text-2xl font-bold">
                                             {mission.title}
                                         </h3>
 

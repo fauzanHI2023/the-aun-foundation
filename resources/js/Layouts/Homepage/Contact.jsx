@@ -11,38 +11,57 @@ import {
     Heart,
 } from "lucide-react";
 import { useState } from "react";
+import { toast } from "sonner";
 
 export function Contact() {
     const [formData, setFormData] = useState({
-        name: "",
+        nama: "",
         email: "",
-        organization: "",
-        message: "",
+        subjek: "",
+        pesan: "",
     });
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Handle form submission
-        console.log("Form submitted:", formData);
+
+        try {
+            await axios.post("/api/contact", formData);
+
+            toast.success("Pesan berhasil terkirim!", {
+                description:
+                    "Thanks for reaching out! We'll get back to you within 1-2 business days.",
+                duration: 5000,
+            });
+
+            setFormData({
+                nama: "",
+                email: "",
+                subjek: "",
+                pesan: "",
+            });
+        } catch (error) {
+            console.error(error);
+            alert("Failed to send message");
+        }
     };
 
     const contactInfo = [
         {
             icon: Mail,
             title: "Email",
-            value: "info@rembulanrelief.org",
+            value: "contact@rembulanrelief.org",
             color: "#ef1968",
         },
         {
             icon: Phone,
-            title: "Telepon",
-            value: "+62 21 1234 5678",
+            title: "Phone",
+            value: "+62-815-3994-9979",
             color: "#f7c498",
         },
         {
             icon: MapPin,
-            title: "Alamat",
-            value: "Jakarta, Indonesia",
+            title: "Address",
+            value: "Jl. H. Awi no 39, wibawa mukti II, Jatiasih, Bekasi, Jawa Barat",
             color: "#ef1968",
         },
     ];
@@ -99,12 +118,11 @@ export function Contact() {
                     </motion.div>
 
                     <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-                        Mari Berkolaborasi
+                        Let’s Collaborate
                     </h2>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                        Bersama kita bisa menciptakan dampak yang lebih besar.
-                        Hubungi kami untuk membangun masa depan yang lebih
-                        bermartabat.
+                        Together, we can make a bigger impact. Contact us to
+                        build a more dignified future.
                     </p>
                 </motion.div>
 
@@ -213,7 +231,7 @@ export function Contact() {
                             />
 
                             <h3 className="text-2xl font-bold mb-4 relative z-10">
-                                Mengapa Berkolaborasi?
+                                Why Collaborate?
                             </h3>
                             <ul className="space-y-3 relative z-10">
                                 <li className="flex items-start gap-3">
@@ -221,7 +239,7 @@ export function Contact() {
                                         <div className="w-2 h-2 rounded-full bg-white" />
                                     </div>
                                     <span>
-                                        Dampak langsung pada perempuan dan anak
+                                        Direct impact on women and children
                                     </span>
                                 </li>
                                 <li className="flex items-start gap-3">
@@ -229,7 +247,7 @@ export function Contact() {
                                         <div className="w-2 h-2 rounded-full bg-white" />
                                     </div>
                                     <span>
-                                        Transparansi dan akuntabilitas penuh
+                                        Full transparency and accountability
                                     </span>
                                 </li>
                                 <li className="flex items-start gap-3">
@@ -237,7 +255,7 @@ export function Contact() {
                                         <div className="w-2 h-2 rounded-full bg-white" />
                                     </div>
                                     <span>
-                                        Program berkelanjutan dan terukur
+                                        Sustainable and measurable programs
                                     </span>
                                 </li>
                             </ul>
@@ -305,30 +323,30 @@ export function Contact() {
                             <div className="absolute -inset-0.5 bg-gradient-to-br from-[#ef1968]/10 via-transparent to-[#f7c498]/10 rounded-[2.5rem] -z-10 blur-xl opacity-50" />
 
                             <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                                Kirim Pesan
+                                Send a Message
                             </h3>
 
                             <form onSubmit={handleSubmit} className="space-y-6">
                                 <div>
                                     <label
-                                        htmlFor="name"
+                                        htmlFor="nama"
                                         className="block text-sm font-medium text-gray-700 mb-2"
                                     >
-                                        Nama Lengkap *
+                                        Full Name *
                                     </label>
                                     <input
                                         type="text"
-                                        id="name"
+                                        id="nama"
                                         required
-                                        value={formData.name}
+                                        value={formData.nama}
                                         onChange={(e) =>
                                             setFormData({
                                                 ...formData,
-                                                name: e.target.value,
+                                                nama: e.target.value,
                                             })
                                         }
                                         className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#ef1968] focus:ring-2 focus:ring-[#ef1968]/20 outline-none transition-all"
-                                        placeholder="Masukkan nama Anda"
+                                        placeholder="Enter your name"
                                     />
                                 </div>
 
@@ -357,46 +375,46 @@ export function Contact() {
 
                                 <div>
                                     <label
-                                        htmlFor="organization"
+                                        htmlFor="subjek"
                                         className="block text-sm font-medium text-gray-700 mb-2"
                                     >
-                                        Organisasi / Institusi
+                                        Subject
                                     </label>
                                     <input
                                         type="text"
-                                        id="organization"
-                                        value={formData.organization}
+                                        id="subjek"
+                                        value={formData.subjek}
                                         onChange={(e) =>
                                             setFormData({
                                                 ...formData,
-                                                organization: e.target.value,
+                                                subjek: e.target.value,
                                             })
                                         }
                                         className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#ef1968] focus:ring-2 focus:ring-[#ef1968]/20 outline-none transition-all"
-                                        placeholder="Nama organisasi Anda"
+                                        placeholder="How can we collaborate?"
                                     />
                                 </div>
 
                                 <div>
                                     <label
-                                        htmlFor="message"
+                                        htmlFor="pesan"
                                         className="block text-sm font-medium text-gray-700 mb-2"
                                     >
-                                        Pesan *
+                                        Message *
                                     </label>
                                     <textarea
-                                        id="message"
+                                        id="pesan"
                                         required
-                                        value={formData.message}
+                                        value={formData.pesan}
                                         onChange={(e) =>
                                             setFormData({
                                                 ...formData,
-                                                message: e.target.value,
+                                                pesan: e.target.value,
                                             })
                                         }
                                         rows={5}
                                         className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#ef1968] focus:ring-2 focus:ring-[#ef1968]/20 outline-none transition-all resize-none"
-                                        placeholder="Ceritakan bagaimana Anda ingin berkolaborasi..."
+                                        placeholder="Tell us how you’d like to collaborate..."
                                     />
                                 </div>
 
@@ -419,7 +437,7 @@ export function Contact() {
                                         className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent skew-x-12"
                                     />
                                     <span className="relative z-10">
-                                        Kirim Pesan
+                                        Send a Message
                                     </span>
                                     <Send
                                         size={20}
@@ -429,7 +447,7 @@ export function Contact() {
                             </form>
 
                             <p className="text-sm text-gray-500 mt-4 text-center">
-                                Kami akan merespons dalam 1-2 hari kerja
+                                We will respond within 1–2 business days
                             </p>
                         </div>
                     </motion.div>
@@ -445,8 +463,8 @@ export function Contact() {
                 >
                     <div className="max-w-3xl mx-auto">
                         <p className="text-2xl md:text-3xl italic text-gray-700 leading-relaxed">
-                            "Setiap kolaborasi adalah langkah menuju masa depan
-                            yang lebih bermartabat"
+                            "Every collaboration is a step toward a more
+                            dignified future"
                         </p>
                         <div className="mt-6 h-1 w-32 bg-gradient-to-r from-[#ef1968] to-[#f7c498] mx-auto rounded-full" />
                     </div>
