@@ -1,211 +1,216 @@
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import {
+    Building2,
+    GraduationCap,
+    TrendingUp,
+    ArrowUpRight,
+} from "lucide-react";
+import { useState } from "react";
+
+const programs = [
+    {
+        icon: Building2,
+        title: "Community Facilities",
+        description:
+            "Building and improving essential infrastructure to strengthen communities and enhance quality of life.",
+        image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&q=80",
+        stat: "100+",
+        statLabel: "Facilities Built",
+        color: "#754c24",
+    },
+    {
+        icon: GraduationCap,
+        title: "Education & Knowledge",
+        description:
+            "Empowering individuals through education, training, and access to learning opportunities.",
+        image: "https://images.unsplash.com/photo-1758270704384-9df36d94a29d?w=1200&q=80",
+        stat: "5,000+",
+        statLabel: "Students Supported",
+        color: "#000000",
+    },
+    {
+        icon: TrendingUp,
+        title: "Economic Empowerment",
+        description:
+            "Supporting sustainable livelihoods and economic independence for vulnerable communities.",
+        image: "https://images.unsplash.com/photo-1562910859-be83f1df7b56?w=1200&q=80",
+        stat: "2,500+",
+        statLabel: "Families Empowered",
+        color: "#754c24",
+    },
+];
 
 export function Programs() {
-    const programs = [
-        {
-            id: "rise",
-            number: "01",
-            acronym: "RISE",
-            fullName: "Education for All",
-            description: "Access to inclusive education for women and children",
-            color: "#ef1968",
-        },
-        {
-            id: "thrive",
-            number: "02",
-            acronym: "THRIVE",
-            fullName: "Economic Empowerment",
-            description:
-                "Economic empowerment through skills and access to capital",
-            color: "#f7c498",
-        },
-    ];
+    const [hoveredIndex, setHoveredIndex] = useState(null);
 
     return (
-        <section
-            id="programs"
-            className="relative py-12 md:py-24 bg-white overflow-hidden"
-        >
-            <div className="container mx-auto px-4 md:px-6 relative z-10">
-                {/* Section Header */}
+        <section id="values" className="bg-white py-32">
+            <div className="max-w-7xl mx-auto px-6 lg:px-12">
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="mb-10 md:mb-16 max-w-4xl"
+                    className="mb-16"
                 >
-                    <div
-                        className="inline-block px-5 py-2 bg-[#ef1968]/10 text-[#ef1968] font-bold text-sm mb-6"
-                        style={{ borderRadius: "20px 20px 20px 4px" }}
-                    >
-                        OUR PROGRAM
+                    <div className="flex items-center justify-between">
+                        <div>
+                            <div className="inline-block mb-6 px-4 py-1.5 bg-black text-white text-xs tracking-wider">
+                                EXPLORE PROGRAMS
+                            </div>
+                            <h2 className="text-5xl lg:text-6xl font-bold text-black mb-4 leading-tight tracking-tight">
+                                Creating Sustainable Impact
+                            </h2>
+                        </div>
+                        <button className="hidden lg:flex items-center gap-2 px-6 py-3 border border-black hover:bg-black hover:text-white transition-colors">
+                            <span className="text-sm">View All</span>
+                            <ArrowUpRight className="w-4 h-4" />
+                        </button>
                     </div>
-                    <h2 className="text-3xl md:text-6xl font-bold text-gray-900 mb-4 md:mb-6">
-                        The Five Pillars of Transformation
-                    </h2>
-                    <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-4">
-                        We present{" "}
-                        <span className="font-bold text-[#ef1968]">
-                            5 empowerment programs
-                        </span>{" "}
-                        designed specifically for women and children in
-                        Indonesia. Each pillar represents a concrete commitment
-                        to creating sustainable change.
-                    </p>
-                    <p className="text-base text-gray-600">
-                        Lets take a closer look at our two main programs:
-                    </p>
                 </motion.div>
 
-                {/* Programs List - Minimalist & Modern */}
-                <div className="max-w-6xl mx-auto space-y-4">
-                    {programs.map((program, index) => (
-                        <motion.div
-                            key={program.id}
-                            initial={{ opacity: 0, x: -30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.08 }}
-                            className="group"
-                        >
-                            <div className="relative">
-                                {/* Default State - Minimal Row */}
-                                <div
-                                    className="relative bg-white border border-gray-200 overflow-hidden transition-all duration-300 group-hover:border-transparent group-hover:shadow-lg"
-                                    style={{
-                                        borderRadius: "24px 24px 24px 4px",
-                                    }}
-                                >
-                                    {/* Hover Background */}
-                                    <motion.div
-                                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                                        style={{
-                                            background: `linear-gradient(135deg, ${program.color}08 0%, ${program.color}03 100%)`,
-                                        }}
+                <div className="grid lg:grid-cols-3 gap-6">
+                    {programs.map((program, index) => {
+                        const Icon = program.icon;
+                        const isHovered = hoveredIndex === index;
+
+                        return (
+                            <motion.div
+                                key={program.title}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{
+                                    duration: 0.5,
+                                    delay: index * 0.1,
+                                }}
+                                onMouseEnter={() => setHoveredIndex(index)}
+                                onMouseLeave={() => setHoveredIndex(null)}
+                                className="group cursor-pointer relative overflow-hidden bg-white rounded-xl"
+                                style={{ borderRadius: "4px" }}
+                            >
+                                <div className="relative h-80 overflow-hidden rounded-xl">
+                                    <img
+                                        src={program.image}
+                                        alt={program.title}
+                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
+                                    <div
+                                        className="absolute inset-0 transition-opacity duration-500"
+                                        style={{
+                                            background: `linear-gradient(to top, ${program.color}, transparent)`,
+                                            opacity: isHovered ? 0.9 : 0.6,
+                                        }}
+                                    ></div>
 
-                                    {/* Content Grid */}
-                                    <div className="relative grid grid-cols-12 gap-4 items-center p-6 md:p-8">
-                                        {/* Number - Col 1 */}
-                                        <div className="col-span-2 md:col-span-1">
-                                            <div
-                                                className="text-3xl md:text-4xl font-bold opacity-30 group-hover:opacity-100 transition-opacity"
-                                                style={{ color: program.color }}
-                                            >
-                                                {program.number}
-                                            </div>
-                                        </div>
-
-                                        {/* Acronym - Col 2-4 */}
-                                        <div className="col-span-4 md:col-span-3">
-                                            <h3
-                                                className="text-2xl md:text-3xl font-bold transition-colors"
-                                                style={{ color: program.color }}
-                                            >
-                                                {program.acronym}
-                                            </h3>
-                                        </div>
-
-                                        {/* Info - Col 5-10 */}
-                                        <div className="col-span-6 md:col-span-7">
-                                            <p className="text-sm md:text-base font-bold text-gray-900 mb-1">
-                                                {program.fullName}
-                                            </p>
-                                            {index < 2 && (
-                                                <p className="text-xs md:text-sm text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 max-h-0 group-hover:max-h-20 overflow-hidden">
-                                                    {program.description}
-                                                </p>
-                                            )}
-                                        </div>
-
-                                        {/* CTA - Col 11-12 */}
-                                        <div className="col-span-12 md:col-span-1 flex justify-end">
-                                            <motion.div
-                                                whileHover={{ x: 5 }}
-                                                className="w-12 h-12 rounded-full border-2 flex items-center justify-center transition-all duration-300 relative"
+                                    <div className="absolute top-6 left-6">
+                                        <div
+                                            className="w-12 h-12 flex items-center justify-center transition-colors duration-300"
+                                            style={{
+                                                backgroundColor: isHovered
+                                                    ? "white"
+                                                    : "rgba(255,255,255,0.2)",
+                                            }}
+                                        >
+                                            <Icon
+                                                className="w-6 h-6 transition-colors duration-300"
                                                 style={{
-                                                    borderColor: program.color,
-                                                    backgroundColor:
-                                                        "transparent",
+                                                    color: isHovered
+                                                        ? program.color
+                                                        : "white",
                                                 }}
-                                            >
-                                                {/* Default Arrow */}
-                                                <ArrowRight
-                                                    size={20}
-                                                    className="group-hover:opacity-0 transition-opacity duration-300"
-                                                    style={{
-                                                        color: program.color,
-                                                    }}
-                                                />
-                                                {/* Hover Arrow - White for RISE, Same color for THRIVE */}
-                                                <div
-                                                    className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center"
-                                                    style={{
-                                                        backgroundColor:
-                                                            program.color,
-                                                    }}
-                                                >
-                                                    <ArrowRight
-                                                        size={20}
-                                                        className="text-white"
-                                                    />
-                                                </div>
-                                            </motion.div>
+                                            />
                                         </div>
                                     </div>
 
-                                    {/* Bottom Accent Line */}
-                                    <motion.div
-                                        className="absolute bottom-0 left-0 h-1 w-0 group-hover:w-full transition-all duration-500"
-                                        style={{
-                                            backgroundColor: program.color,
-                                        }}
-                                    />
+                                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                        <h3 className="text-2xl font-bold mb-2 tracking-tight">
+                                            {program.title}
+                                        </h3>
+                                        <p
+                                            className="text-sm text-white/90 mb-4 transition-all duration-300"
+                                            style={{
+                                                maxHeight: isHovered
+                                                    ? "100px"
+                                                    : "0",
+                                                opacity: isHovered ? 1 : 0,
+                                                overflow: "hidden",
+                                            }}
+                                        >
+                                            {program.description}
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                        </motion.div>
-                    ))}
+
+                                <div className="p-6 bg-white">
+                                    <div className="flex items-center justify-between">
+                                        <div>
+                                            <div className="text-3xl font-bold text-black mb-1">
+                                                {program.stat}
+                                            </div>
+                                            <div className="text-xs text-black/60">
+                                                {program.statLabel}
+                                            </div>
+                                        </div>
+                                        <div
+                                            className="w-10 h-10 flex items-center justify-center border transition-all duration-300"
+                                            style={{
+                                                borderColor: isHovered
+                                                    ? program.color
+                                                    : "#e5e5e5",
+                                                backgroundColor: isHovered
+                                                    ? program.color
+                                                    : "transparent",
+                                            }}
+                                        >
+                                            <ArrowUpRight
+                                                className="w-5 h-5 transition-all duration-300"
+                                                style={{
+                                                    color: isHovered
+                                                        ? "white"
+                                                        : "#000",
+                                                    transform: isHovered
+                                                        ? "translate(2px, -2px)"
+                                                        : "translate(0, 0)",
+                                                }}
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        );
+                    })}
                 </div>
+            </div>
 
-                {/* Bottom CTA */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="mt-16"
-                >
-                    {/* Teaser for 3 more programs */}
-                    <div className="max-w-3xl mx-auto text-center mb-8">
-                        <p className="text-gray-700 text-lg mb-2">
-                            There are still{" "}
-                            <span className="font-bold text-[#ef1968]">
-                                3 other programs
-                            </span>{" "}
-                            waiting for you to explore
-                        </p>
-                        <p className="text-gray-600">
-                            CARE+, SHIELD, and GREENLIGHT — discover how each
-                            pillar reinforces the others to create a
-                            transformative impact
-                        </p>
+            <div className="bg-[#f5f5f5] mt-32">
+                <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-20">
+                    <div className="grid grid-cols-2 md:grid-cols-5 gap-12">
+                        {[
+                            { number: "10K+", label: "Lives Impacted" },
+                            { number: "100+", label: "Facilities" },
+                            { number: "5K+", label: "Students" },
+                            { number: "2.5K+", label: "Families" },
+                            { number: "50+", label: "Partners" },
+                        ].map((stat, i) => (
+                            <motion.div
+                                key={stat.label}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1 }}
+                                className="text-center"
+                            >
+                                <div className="text-5xl font-bold text-black mb-2">
+                                    {stat.number}
+                                </div>
+                                <div className="text-xs text-black/60 tracking-wider">
+                                    {stat.label}
+                                </div>
+                            </motion.div>
+                        ))}
                     </div>
-
-                    <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="bg-[#ef1968] text-white px-10 py-5 font-bold text-lg flex items-center gap-3 mx-auto group"
-                        style={{ borderRadius: "32px 32px 32px 6px" }}
-                    >
-                        <span>Explore All 5 Programs</span>
-                        <ArrowRight
-                            size={24}
-                            className="group-hover:translate-x-1 transition-transform"
-                        />
-                    </motion.button>
-                </motion.div>
+                </div>
             </div>
         </section>
     );

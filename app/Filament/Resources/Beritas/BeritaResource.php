@@ -40,10 +40,11 @@ class BeritaResource extends Resource
 
             Forms\Components\Select::make('category')
                 ->options([
+                    'community' => 'Community',
                     'education' => 'Education',
-                    'health' => 'Health',
-                    'protection' => 'Protection',
-                    'environment' => 'Environment',
+                    'economic' => 'Economic',
+                    'qurban' => 'Qurban',
+                    'ramadhan' => 'Ramadhan',
                 ])
                 ->required()
                 ->native(false),

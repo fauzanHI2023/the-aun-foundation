@@ -5,277 +5,261 @@ import {
     Heart,
     Shield,
     Leaf,
+    Building2,
+    BookOpen,
+    Calendar,
+    Users,
+    Droplets,
+    HandHeart,
+    Sparkles,
     ArrowRight,
+    BookOpenText,
 } from "lucide-react";
-
-const programs = [
-    {
-        id: "rise",
-        name: "RISE",
-        title: "Education Access",
-        color: "#ef1968",
-        icon: GraduationCap,
-        count: "6",
-    },
-    {
-        id: "thrive",
-        name: "THRIVE",
-        title: "Economic Empowerment",
-        color: "#f7c498",
-        icon: TrendingUp,
-        count: "6",
-    },
-    {
-        id: "care",
-        name: "CARE+",
-        title: "Health & Wellbeing",
-        color: "#ef1968",
-        icon: Heart,
-        count: "5",
-    },
-    {
-        id: "shield",
-        name: "SHIELD",
-        title: "Protection & Rights",
-        color: "#f7c498",
-        icon: Shield,
-        count: "6",
-    },
-    {
-        id: "greenlight",
-        name: "GREENLIGHT",
-        title: "Environmental Action",
-        color: "#ef1968",
-        icon: Leaf,
-        count: "6",
-    },
-];
 
 export function ProgramsBanner() {
     return (
-        <section className="relative py-8 md:py-12 lg:py-20 overflow-hidden bg-white">
-            <div className="container mx-auto px-6 md:px-12">
-                <div className="max-w-7xl mx-auto">
-                    {/* Hero Banner - Asymmetric & Fresh */}
-                    <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 mb-10 md:mb-16">
-                        {/* Left Content */}
-                        <motion.div
-                            initial={{ opacity: 0, x: -30 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.8 }}
-                            className="md:col-span-5 flex flex-col justify-center"
-                        >
-                            <div className="inline-block mb-6">
-                                <div
-                                    className="pr-5 py-2 text-[#ef1968] text-xs font-bold uppercase tracking-widest"
-                                    style={{
-                                        borderRadius: "16px 16px 16px 4px",
-                                    }}
-                                >
-                                    Our Programs
-                                </div>
+        <section className="py-24">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center mb-20">
+                    <h2 className="text-4xl font-bold md:text-5xl mb-4 text-foreground">
+                        Core{" "}
+                        <span className="text-[#8b5723]">Program Pillars</span>
+                    </h2>
+                </div>
+
+                {/* Community Facilities */}
+                <div className="mb-32">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start mb-12">
+                        <div className="lg:col-span-1 lg:sticky lg:top-24">
+                            <div className="inline-flex items-center gap-4 mb-6 bg-[#8b5723]/5 px-6 py-3 rounded-full">
+                                <Building2 className="w-6 h-6 text-[#8b5723]" />
+                                <span className="text-sm text-[#8b5723] tracking-wide">
+                                    PILLAR 01
+                                </span>
                             </div>
-
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6 leading-tight">
-                                <span className="text-gray-900">
-                                    5 Ways We Create{" "}
-                                </span>
-                                <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#ef1968] to-[#f7c498]">
-                                    Impact
-                                </span>
-                            </h1>
-
-                            <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-md">
-                                Integrated initiatives for lasting change in
-                                women, children, and communities
+                            <h3 className="text-4xl md:text-5xl mb-6 text-foreground">
+                                Community
+                                <br />
+                                Facilities
+                            </h3>
+                            <p className="text-lg text-foreground/70 leading-relaxed mb-8">
+                                This pillar focuses on developing and
+                                strengthening public facilities that support
+                                social, spiritual, and community well-being.
                             </p>
+                            <div className="h-px w-full bg-gradient-to-r from-primary/30 to-transparent" />
+                        </div>
 
-                            <div className="flex items-center gap-6">
-                                <div>
-                                    <p className="text-4xl font-bold text-[#ef1968]">
-                                        29
-                                    </p>
-                                    <p className="text-sm text-gray-500">
-                                        Sub-Programs
-                                    </p>
-                                </div>
-                                <div className="w-px h-12 bg-gray-200" />
-                                <div>
-                                    <p className="text-4xl font-bold text-[#f7c498]">
-                                        5
-                                    </p>
-                                    <p className="text-sm text-gray-500">
-                                        Core Areas
+                        <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="group relative overflow-hidden rounded-3xl">
+                                <img
+                                    src="https://images.unsplash.com/photo-1554110838-816383ce7956?w=600"
+                                    alt="Mosque"
+                                    className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-700"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#1A1410]/90 via-[#1A1410]/40 to-transparent" />
+                                <div className="absolute bottom-0 left-0 right-0 p-6 text-[#FEFDFB]">
+                                    <Building2 className="w-8 h-8 mb-3" />
+                                    <h4 className="text-xl mb-2">
+                                        Mosque Development
+                                    </h4>
+                                    <p className="text-sm text-background/80">
+                                        Construction and renovation of mosques
+                                        as centers for worship and community
                                     </p>
                                 </div>
                             </div>
-                        </motion.div>
 
-                        {/* Right Images - Bold Mosaic Layout */}
-                        <div className="md:col-span-7 relative h-[400px] md:h-[550px]">
-                            {/* Large Main Image - Top Right */}
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 0.8, delay: 0.2 }}
-                                className="absolute top-0 right-0 w-[70%] h-[60%] overflow-hidden"
-                                style={{ borderRadius: "56px 56px 56px 12px" }}
-                            >
+                            <div className="group relative overflow-hidden rounded-3xl">
                                 <img
-                                    src="/images/DSC00150.jpg"
-                                    alt="Program Impact"
-                                    className="w-full h-full object-cover"
+                                    src="https://images.unsplash.com/photo-1601662582217-dcfe2ef086ea?w=600"
+                                    alt="Water"
+                                    className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-700"
                                 />
-                                {/* Strong color accent on corner */}
-                                <div
-                                    className="absolute bottom-0 right-0 w-32 h-32 bg-[#ef1968]"
-                                    style={{ borderRadius: "0 0 56px 0" }}
-                                />
-                            </motion.div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#1A1410]/90 via-[#1A1410]/40 to-transparent" />
+                                <div className="absolute bottom-0 left-0 right-0 p-6 text-[#FEFDFB]">
+                                    <Droplets className="w-8 h-8 mb-3" />
+                                    <h4 className="text-xl mb-2">
+                                        Water for Life
+                                    </h4>
+                                    <p className="text-sm text-background/80">
+                                        Providing access to clean water through
+                                        sustainable management systems
+                                    </p>
+                                </div>
+                            </div>
 
-                            {/* Medium Image - Bottom Left */}
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 0.8, delay: 0.4 }}
-                                className="absolute bottom-0 left-0 w-[60%] h-[52%] overflow-hidden"
-                                style={{ borderRadius: "48px 48px 48px 10px" }}
-                            >
+                            <div className="md:col-span-2 group relative overflow-hidden rounded-3xl">
                                 <img
-                                    src="/images/DSC02810-2.jpg"
-                                    alt="Community Empowerment"
-                                    className="w-full h-full object-cover"
+                                    src="https://images.unsplash.com/photo-1581141444721-0e6f8fa8397e?w=1200"
+                                    alt="Infrastructure"
+                                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-700"
                                 />
-                                {/* Strong color accent on corner */}
-                                <div
-                                    className="absolute top-0 left-0 w-24 h-24 bg-[#f7c498]"
-                                    style={{ borderRadius: "48px 0 0 0" }}
-                                />
-                            </motion.div>
-
-                            {/* Small Accent Image - Middle Right */}
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 0.8, delay: 0.6 }}
-                                className="absolute top-[45%] right-[8%] w-[35%] h-[30%] overflow-hidden"
-                                style={{ borderRadius: "40px 40px 40px 8px" }}
-                            >
-                                <img
-                                    src="/images/DSC09927.jpg"
-                                    alt="Healthcare Support"
-                                    className="w-full h-full object-cover"
-                                />
-                            </motion.div>
-
-                            {/* Bold Floating Shapes */}
-                            <motion.div
-                                initial={{ opacity: 0, rotate: -10 }}
-                                animate={{ opacity: 1, rotate: 0 }}
-                                transition={{ duration: 1, delay: 0.8 }}
-                                className="absolute top-[15%] left-[5%] w-20 h-20 bg-gradient-to-br from-[#ef1968] to-[#f7c498]"
-                                style={{ borderRadius: "24px 24px 24px 6px" }}
-                            />
-
-                            <motion.div
-                                initial={{ opacity: 0, rotate: 10 }}
-                                animate={{ opacity: 1, rotate: 0 }}
-                                transition={{ duration: 1, delay: 1 }}
-                                className="absolute bottom-[15%] right-[25%] w-16 h-16 bg-[#f7c498]"
-                                style={{ borderRadius: "20px 20px 20px 5px" }}
-                            />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#1A1410]/90 via-[#1A1410]/40 to-transparent" />
+                                <div className="absolute bottom-0 left-0 right-0 p-6 text-[#FEFDFB]">
+                                    <div className="p-8 text-background max-w-lg">
+                                        <Users className="w-8 h-8 mb-3" />
+                                        <h4 className="text-2xl mb-2">
+                                            Community Infrastructure
+                                        </h4>
+                                        <p className="text-background/80">
+                                            Development of public facilities
+                                            including bridges, classes, clinics,
+                                            and more
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </div>
 
-                    {/* Compact Programs List */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.8 }}
-                        className="grid grid-cols-1 md:grid-cols-5 gap-3 md:gap-4"
-                    >
-                        {programs.map((program, index) => {
-                            const Icon = program.icon;
-                            return (
-                                <motion.div
-                                    key={program.id}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{
-                                        duration: 0.4,
-                                        delay: 0.9 + index * 0.1,
-                                    }}
-                                    className="group cursor-pointer"
-                                >
-                                    <div
-                                        className="relative p-5 md:p-6 bg-white border hover:border-current transition-all duration-300"
-                                        style={{
-                                            borderRadius: "24px 24px 24px 6px",
-                                            borderColor:
-                                                index % 2 === 0
-                                                    ? "#ef1968"
-                                                    : "#f7c498",
-                                        }}
-                                    >
-                                        <div className="flex md:flex-col items-center md:items-start gap-4 md:gap-3">
-                                            <div
-                                                className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300"
-                                                style={{
-                                                    backgroundColor:
-                                                        program.color,
-                                                    borderRadius:
-                                                        "14px 14px 14px 3px",
-                                                }}
-                                            >
-                                                <Icon size={24} />
-                                            </div>
+                {/* Education & Knowledge */}
+                <div className="mb-32">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start mb-12">
+                        <div className="lg:col-span-1 lg:order-2 lg:sticky lg:top-24">
+                            <div className="inline-flex items-center gap-4 mb-6 bg-[#8b5723]/10 px-6 py-3 rounded-full">
+                                <BookOpen className="w-6 h-6 text-[#8b5723]" />
+                                <span className="text-sm text-[#8b5723] tracking-wide">
+                                    PILLAR 02
+                                </span>
+                            </div>
+                            <h3 className="text-4xl md:text-5xl mb-6 text-foreground">
+                                Education &<br />
+                                Knowledge
+                            </h3>
+                            <p className="text-lg text-foreground/70 leading-relaxed mb-8">
+                                This pillar aims to expand access to education
+                                and knowledge, particularly for young people.
+                            </p>
+                            <div className="h-px w-full bg-gradient-to-r from-[#8b5723]/30 to-transparent" />
+                        </div>
 
-                                            <div className="flex-1 md:flex-none">
-                                                <h3
-                                                    className="text-xl md:text-2xl font-bold mb-1"
-                                                    style={{
-                                                        color: program.color,
-                                                    }}
-                                                >
-                                                    {program.name}
-                                                </h3>
-                                                <p className="text-sm text-gray-600 mb-2">
-                                                    {program.title}
-                                                </p>
-                                                <p className="text-xs text-gray-500 font-medium">
-                                                    {program.count} Programs
-                                                </p>
-                                            </div>
+                        <div className="lg:col-span-2 lg:order-1">
+                            <div className="space-y-6">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div className="bg-[#F5E6D3]/10 p-8 rounded-3xl border-l-4 border-[#8B6835] hover:bg-[#ffffff]/20 transition-colors">
+                                        <GraduationCap className="w-10 h-10 text-[#8B6835] mb-4" />
+                                        <h4 className="text-xl mb-2 text-[#1A1410]">
+                                            Children's Education
+                                        </h4>
+                                        <p className="text-[#1A1410]/70">
+                                            Comprehensive education support for
+                                            children in need
+                                        </p>
+                                    </div>
+                                    <div className="bg-[#F5E6D3]/10 p-8 rounded-3xl border-l-4 border-[#D4A574] hover:bg-[#ffffff]/20 transition-colors">
+                                        <BookOpen className="w-10 h-10 text-[#8B6835] mb-4" />
+                                        <h4 className="text-xl mb-2 text-[#1A1410]">
+                                            Qur'an Learning
+                                        </h4>
+                                        <p className="text-[#1A1410]/70">
+                                            Spiritual education programs for all
+                                            ages
+                                        </p>
+                                    </div>
+                                    <div className="bg-[#F5E6D3]/10 p-8 rounded-3xl border-l-4 border-[#8B6835] hover:bg-[#ffffff]/20 transition-colors">
+                                        <GraduationCap className="w-10 h-10 text-[#8B6835] mb-4" />
+                                        <h4 className="text-xl mb-2 text-[#1A1410]">
+                                            Support for educational facilities
+                                        </h4>
+                                        <p className="text-[#1A1410]/70">
+                                            Comprehensive education support for
+                                            children in need
+                                        </p>
+                                    </div>
+                                    <div className="bg-[#F5E6D3]/10 p-8 rounded-3xl border-l-4 border-[#D4A574] hover:bg-[#ffffff]/20 transition-colors">
+                                        <BookOpenText className="w-10 h-10 text-[#8B6835] mb-4" />
+                                        <h4 className="text-xl mb-2 text-[#1A1410]">
+                                            Youth capacity development
+                                        </h4>
+                                        <p className="text-[#1A1410]/70">
+                                            Spiritual education programs for all
+                                            ages
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="relative h-96 rounded-3xl overflow-hidden">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1200"
+                                        alt="Children learning"
+                                        className="w-full h-full object-cover"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#1A1410]/80 to-transparent flex items-end">
+                                        <div className="p-8 text-[#ffffff]">
+                                            <p className="text-2xl mb-2">
+                                                Children
+                                            </p>
+                                            <p className="text-[#ffffff]/80">
+                                                Receiving quality education
+                                                support
+                                            </p>
                                         </div>
                                     </div>
-                                </motion.div>
-                            );
-                        })}
-                    </motion.div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                    {/* Bottom CTA */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 1.4 }}
-                        className="mt-8 md:mt-12 text-center"
-                    >
-                        <button
-                            onClick={() => {
-                                const section =
-                                    document.getElementById("programs-detail");
-                                section?.scrollIntoView({
-                                    behavior: "smooth",
-                                    block: "start",
-                                });
-                            }}
-                            className="inline-flex items-center gap-2 md:gap-3 px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-[#ef1968] to-[#f7c498] text-white text-sm md:text-base font-bold hover:shadow-lg hover:scale-105 transition-all duration-300"
-                            style={{ borderRadius: "28px 28px 28px 6px" }}
-                        >
-                            Explore All Programs
-                            <ArrowRight size={18} className="md:w-5 md:h-5" />
-                        </button>
-                    </motion.div>
+                {/* Economic Empowerment */}
+                <div className="mb-32">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                        <div className="lg:col-span-1 lg:sticky lg:top-24">
+                            <div className="inline-flex items-center gap-4 mb-6 bg-[#8b5723]/5 px-6 py-3 rounded-full">
+                                <TrendingUp className="w-6 h-6 text-[#8b5723]" />
+                                <span className="text-sm text-[#8b5723] tracking-wide">
+                                    PILLAR 03
+                                </span>
+                            </div>
+                            <h3 className="text-4xl md:text-5xl mb-6 text-foreground">
+                                Economic
+                                <br />
+                                Empowerment
+                            </h3>
+                            <p className="text-lg text-foreground/70 leading-relaxed mb-8">
+                                This pillar focuses on strengthening community
+                                economic independence through various
+                                empowerment initiatives.
+                            </p>
+                            <div className="h-px w-full bg-gradient-to-r from-[#8b5723]/30 to-transparent" />
+                        </div>
+
+                        <div className="lg:col-span-2">
+                            <div className="grid grid-cols-2 gap-6 mb-6">
+                                <img
+                                    src="https://images.unsplash.com/photo-1617817546276-80b86dd60151?w=400"
+                                    alt="Skills training"
+                                    className="rounded-3xl w-full h-56 object-cover"
+                                />
+                                <img
+                                    src="https://images.unsplash.com/photo-1644726270363-e746b37b482b?w=400"
+                                    alt="Community work"
+                                    className="rounded-3xl w-full h-56 object-cover"
+                                />
+                            </div>
+                            <div className="bg-gradient-to-br from-primary/10 to-accent/10 p-10 rounded-3xl">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <div>
+                                        <div className="text-4xl text-primary mb-2">
+                                            50+
+                                        </div>
+                                        <p className="text-foreground/70">
+                                            Entrepreneurs trained
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <div className="text-4xl text-primary mb-2">
+                                            80
+                                        </div>
+                                        <p className="text-foreground/70">
+                                            Families mentored
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

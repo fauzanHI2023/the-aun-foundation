@@ -1,11 +1,12 @@
 import { Head, Link } from "@inertiajs/react";
 import { Header } from "@/Layouts/Homepage/Header";
 import { HeroSection } from "@/Layouts/Homepage/HeroSection";
-import { VisionMission } from "@/Layouts/Homepage/VisionMision";
+import { AboutSection } from "@/Layouts/Homepage/AboutSection";
 import { Programs } from "@/Layouts/Homepage/Program";
-import { News } from "@/Layouts/Homepage/News";
+import { NewsSection } from "@/Layouts/Homepage/NewsSection";
 import { Contact } from "@/Layouts/Homepage/Contact";
 import { Footer } from "@/Layouts/Homepage/Footer";
+import { ContactSection } from "@/Layouts/Homepage/ContactSection";
 
 export default function Welcome({ auth, laravelVersion, phpVersion }) {
     const handleImageError = () => {
@@ -365,10 +366,10 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
             </div> */}
             <Header />
             <HeroSection />
-            <VisionMission />
+            <AboutSection />
             <Programs />
-            <News />
-            <Contact />
+            <NewsSection />
+            <ContactSection />
             <Footer />
         </>
     );

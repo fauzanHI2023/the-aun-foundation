@@ -11,7 +11,9 @@ use Inertia\Inertia;
 use App\Models\Berita;
 use App\Models\Program;
 use App\Models\ContactMessage;
-
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\CampaignController;
+use App\Http\Controllers\CheckoutController;
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -20,6 +22,10 @@ Route::get('/', function () {
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
+});
+
+Route::get('/checkout-test', function () {
+    return 'checkout ok';
 });
 
 Route::get('/aboutus', function () {
@@ -154,5 +160,41 @@ Route::get('/search-data', function () {
         'programs' => Program::latest()->get(), // kalau ada relasi
     ]);
 });
+
+Route::get('/cart', [CartController::class, 'index']);
+
+Route::post('/cart/add', [CartController::class, 'add']);
+
+Route::post('/cart/update/{id}', [CartController::class, 'update']);
+
+Route::delete('/cart/remove/{id}', [CartController::class, 'remove']);
+
+Route::delete('/cart/clear', [CartController::class, 'clear']);
+
+
+Route::get('/campaigns', [
+    CampaignController::class,
+    'index'
+])->name('campaign.index');
+
+Route::get('/campaigns/{slug}', [
+    CampaignController::class,
+    'show'
+])->name('campaign.show');
+
+Route::get('/checkout', [
+    CheckoutController::class,
+    'index'
+]);
+
+Route::post('/checkout', [
+    CheckoutController::class,
+    'store'
+]);
+
+Route::post('/midtrans/callback', [
+    CheckoutController::class,
+    'callback'
+]);
 
 require __DIR__.'/auth.php';

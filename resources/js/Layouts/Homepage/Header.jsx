@@ -28,14 +28,13 @@ export function Header() {
         { name: "Program", href: "/programs" },
         { name: "News", href: "/news" },
         { name: "Contact Us", href: "/contact" },
-        { name: "Volunteer", href: "/volunteer" },
     ];
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const res = await axios.get(
-                    "http://127.0.0.1:8000/search-data"
+                    "http://127.0.0.1:8001/search-data"
                 );
 
                 setNewsData(res.data.news);
@@ -96,7 +95,7 @@ export function Header() {
                                 className="flex items-center"
                             >
                                 <img
-                                    src="/images/logo dan nama samping pink PNG.png"
+                                    src="/images/logo aun baru.png"
                                     alt="Rembulan Relief"
                                     className="h-16 w-auto"
                                 />
@@ -131,8 +130,7 @@ export function Header() {
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ delay: 0.5 }}
-                                className="bg-[#ef1968] text-white px-6 py-2 hover:bg-[#d01558] transition-colors"
-                                style={{ borderRadius: "16px 16px 16px 4px" }}
+                                className="bg-[#754c24] text-white px-6 py-2 hover:bg-[#7b542d] transition-colors rounded-sm"
                             >
                                 Donasi
                             </motion.button>

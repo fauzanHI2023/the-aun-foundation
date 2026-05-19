@@ -7,6 +7,11 @@ import { RembulanSymbol } from "@/Layouts/AboutUs/RembulanSymbol";
 import { VisionSection } from "@/Layouts/AboutUs/VisionSection";
 import { MissionsSection } from "@/Layouts/AboutUs/MissionSection";
 import { StrategicApproach } from "@/Layouts/AboutUs/StrategicApproach";
+import { OurStory } from "@/Layouts/AboutUs/OurStory";
+import { OurVision } from "@/Layouts/AboutUs/OurVision";
+import { OurMission } from "@/Layouts/AboutUs/OurMission";
+import { OurValues } from "@/Layouts/AboutUs/OurValues";
+import { OurCommitment } from "@/Layouts/AboutUs/OurCommitment";
 
 export default function About() {
     return (
@@ -15,12 +20,11 @@ export default function About() {
 
             <main className="pt-20">
                 <HeroSection />
-                <OrganizationalStatement />
-                <InclusiveApproach />
-                <RembulanSymbol />
-                <VisionSection />
-                <MissionsSection />
-                <StrategicApproach />
+                <OurStory />
+                <OurMission />
+                <OurValues />
+                <OurCommitment />
+                {/* <StrategicApproach /> */}
             </main>
 
             <Footer />

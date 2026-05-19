@@ -2,6 +2,8 @@ import { Header } from "@/Layouts/Homepage/Header";
 import { Footer } from "@/Layouts/Homepage/Footer";
 import { ProgramsBanner } from "@/Layouts/Programs/ProgramsSection";
 import { ProgramsCompact } from "@/Layouts/Programs/ProgramsCompact";
+import { ProgramHeroSection } from "@/Layouts/Programs/ProgramHeroSection";
+import { SeasonalProgramSection } from "@/Layouts/Programs/SeasonalProgramSection";
 
 export default function Programs() {
     return (
@@ -9,8 +11,9 @@ export default function Programs() {
             <Header />
 
             <main className="pt-20">
+                <ProgramHeroSection />
                 <ProgramsBanner />
-                <ProgramsCompact />
+                <SeasonalProgramSection />
             </main>
 
             <Footer />
