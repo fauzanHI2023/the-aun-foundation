@@ -3,6 +3,7 @@ import { Footer } from "@/Layouts/Homepage/Footer";
 import { ContactHero } from "@/Layouts/Contact/ContactHero";
 import { ContactCTA } from "@/Layouts/Contact/ContactCTA";
 import { ContactForm } from "@/Layouts/Contact/ContactForm";
+import { ContactSectionPage } from "@/Layouts/Contact/ContactSectionPage";
 
 export default function Contact() {
     return (
@@ -10,9 +11,7 @@ export default function Contact() {
             <Header />
 
             <main className="pt-20">
-                <ContactHero />
-                <ContactCTA />
-                <ContactForm />
+                <ContactSectionPage />
             </main>
 
             <Footer />

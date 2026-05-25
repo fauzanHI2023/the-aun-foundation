@@ -1,17 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
+import axios from "axios";
 
 export function NewsHeroSection() {
-    const featuredNews = {
-        title: "AUN Launches New Community Center in Remote Village",
-        excerpt:
-            "In a significant milestone for community development, AUN has successfully completed and launched a new multi-purpose community center serving over 2,000 residents.",
-        image: "https://images.unsplash.com/photo-1636987050384-9b079c700f63?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200",
-        date: "May 15, 2026",
-        category: "Community Facilities",
-        readTime: "5 min read",
-    };
+    // const featuredNews = {
+    //     title: "AUN Launches New Community Center in Remote Village",
+    //     excerpt:
+    //         "In a significant milestone for community development, AUN has successfully completed and launched a new multi-purpose community center serving over 2,000 residents.",
+    //     image: "https://images.unsplash.com/photo-1636987050384-9b079c700f63?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200",
+    //     date: "May 15, 2026",
+    //     category: "Community Facilities",
+    //     readTime: "5 min read",
+    // };
 
     const topStories = [
         {
@@ -27,20 +28,27 @@ export function NewsHeroSection() {
             category: "Education",
         },
     ];
+    const [newsFeatureds, setNewsFeatureds] = useState([]);
+
+    useEffect(() => {
+        axios.get("/api/beritas").then((res) => setNewsFeatureds(res.data));
+    }, []);
+
+    const featuredNews = newsFeatureds.find((item) => item.featured_post === 1);
     return (
-        <section className="relative h-screen overflow-hidden">
+        <section className="relative md:mt-0 mt-[100px] md:h-screen h-[900px] overflow-hidden">
             <div className="absolute inset-0">
                 <img
-                    src={featuredNews.image}
-                    alt={featuredNews.title}
+                    src={`${featuredNews?.image}`}
+                    alt={featuredNews?.title}
                     className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/30" />
             </div>
 
-            <div className="relative h-full flex items-end">
+            <div className="relative h-full flex lg:items-end items-center">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-20 w-full">
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:items-end items-start">
                         <motion.div
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -53,22 +61,22 @@ export function NewsHeroSection() {
                                 </span>
                                 <div className="flex items-center text-white/80 text-sm">
                                     <Calendar className="h-4 w-4 mr-1.5" />
-                                    {featuredNews.date}
+                                    {featuredNews?.date}
                                 </div>
                                 <div className="flex items-center text-white/80 text-sm">
                                     <Clock className="h-4 w-4 mr-1.5" />
-                                    {featuredNews.readTime}
+                                    {featuredNews?.readTime}
                                 </div>
                             </div>
 
-                            <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-                                {featuredNews.title}
+                            <h1 className="text-3xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                                {featuredNews?.title}
                             </h1>
                             <p className="text-xl text-white/90 mb-8 max-w-2xl leading-relaxed">
-                                {featuredNews.excerpt}
+                                {featuredNews?.excerpt}
                             </p>
                             <a
-                                href="/news/1"
+                                href={`/news/${featuredNews?.slug}`}
                                 className="inline-flex items-center px-8 py-4 rounded-lg bg-white text-black font-medium hover:bg-gray-100 transition-all hover:scale-105 shadow-xl"
                             >
                                 Read Full Story

@@ -25,7 +25,7 @@ export function Footer() {
             <div className="absolute top-0 left-0 w-96 h-96 bg-[#754c24] rounded-full mix-blend-overlay filter blur-3xl opacity-10"></div>
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-amber-600 rounded-full mix-blend-overlay filter blur-3xl opacity-10"></div>
 
-            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:py-20 py-8">
                 <div className="grid md:grid-cols-4 gap-12 mb-16">
                     {/* About Column */}
                     <div className="md:col-span-2">
@@ -153,7 +153,17 @@ export function Footer() {
                                     <MapPin className="w-5 h-5 text-amber-400 group-hover:text-white" />
                                 </div>
                                 <span className="text-gray-300 text-sm mt-2">
-                                    Jakarta, Indonesia
+                                    Registered Office : Mayapada Tower 1, 11st
+                                    Floor, Kuningan South Jakarta
+                                </span>
+                            </li>
+                            <li className="flex items-start gap-3 group">
+                                <div className="p-2 bg-gray-800/50 rounded-lg group-hover:bg-[#754c24] transition-colors">
+                                    <MapPin className="w-5 h-5 text-amber-500 group-hover:text-white" />
+                                </div>
+                                <span className="text-gray-300 text-sm mt-2">
+                                    Operational Office : GKM Green Tower, 20th
+                                    Floor, TB Simatupang South Jakarta
                                 </span>
                             </li>
                         </ul>
@@ -163,9 +173,9 @@ export function Footer() {
                 {/* Bottom Bar */}
                 <div className="pt-8 mt-12 border-t border-gray-800/50">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-                        <p className="text-gray-400 text-sm text-center md:text-left flex items-center gap-2">
+                        <p className="text-gray-400 text-sm text-center md:text-left md:flex md:items-center md:gap-2 md:w-auto w-full flex gap-1">
                             © {currentYear} AUN Foundation. Made with{" "}
-                            <Heart className="w-4 h-4 text-red-500 fill-red-500" />{" "}
+                            <Heart className="w-4 h-4 text-lime-600 fill-lime-700" />{" "}
                             for communities.
                         </p>
                         <div className="flex gap-6 text-sm">

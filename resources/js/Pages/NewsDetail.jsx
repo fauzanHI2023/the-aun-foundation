@@ -2,6 +2,7 @@ import { Header } from "@/Layouts/Homepage/Header";
 import { Footer } from "@/Layouts/Homepage/Footer";
 import { NewsDetailHero } from "@/Layouts/NewsDetail/NewsDetailHero";
 import { NewsDetailContent } from "@/Layouts/NewsDetail/NewsDetailContent";
+import { NewsHeroDetailSection } from "@/Layouts/NewsDetail/NewsHeroDetailSection";
 
 export default function NewsDetail({ article }) {
     // If article not found, redirect to news page
@@ -10,7 +11,7 @@ export default function NewsDetail({ article }) {
             <Header />
 
             <main className="pt-20">
-                <NewsDetailHero article={article} />
+                <NewsHeroDetailSection article={article} />
                 <NewsDetailContent article={article} />
             </main>
 

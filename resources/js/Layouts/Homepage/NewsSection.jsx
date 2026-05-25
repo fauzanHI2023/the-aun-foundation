@@ -35,7 +35,7 @@ export function NewsSection() {
     return (
         <section
             id="news"
-            className="relative py-20 md:py-32 bg-gradient-to-b from-white to-[#fffdf7] overflow-hidden"
+            className="relative py-8 md:py-16 bg-gradient-to-b from-white to-[#fffdf7] overflow-hidden"
         >
             {/* Background decoration */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#754c24] rounded-full mix-blend-multiply filter blur-3xl opacity-5"></div>
@@ -46,14 +46,14 @@ export function NewsSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="mb-16"
+                    className="md:mb-16 mb-8"
                 >
                     <div className="flex items-center justify-between">
                         <div>
                             <div className="inline-block mb-6 px-4 py-1.5 bg-[#754c24] text-white text-xs tracking-wider">
                                 STORIES & UPDATES
                             </div>
-                            <h2 className="text-5xl lg:text-6xl font-bold text-black mb-4 leading-tight tracking-tight">
+                            <h2 className="text-3xl lg:text-6xl font-bold text-black mb-4 leading-tight tracking-tight">
                                 Latest News Stay Updated
                             </h2>
                         </div>

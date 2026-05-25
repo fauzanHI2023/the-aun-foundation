@@ -18,17 +18,17 @@ import {
 
 export function ProgramsBanner() {
     return (
-        <section className="py-24">
+        <section className="lg:py-16 py-6">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-20">
-                    <h2 className="text-4xl font-bold md:text-5xl mb-4 text-foreground">
+                <div className="text-center lg:mb-20 mb-8">
+                    <h2 className="text-3xl font-bold md:text-5xl mb-4 text-foreground">
                         Core{" "}
                         <span className="text-[#8b5723]">Program Pillars</span>
                     </h2>
                 </div>
 
                 {/* Community Facilities */}
-                <div className="mb-32">
+                <div className="lg:mb-32 mb-16">
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start mb-12">
                         <div className="lg:col-span-1 lg:sticky lg:top-24">
                             <div className="inline-flex items-center gap-4 mb-6 bg-[#8b5723]/5 px-6 py-3 rounded-full">
@@ -93,21 +93,19 @@ export function ProgramsBanner() {
                                 <img
                                     src="https://images.unsplash.com/photo-1581141444721-0e6f8fa8397e?w=1200"
                                     alt="Infrastructure"
-                                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-700"
+                                    className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-700"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#1A1410]/90 via-[#1A1410]/40 to-transparent" />
                                 <div className="absolute bottom-0 left-0 right-0 p-6 text-[#FEFDFB]">
-                                    <div className="p-8 text-background max-w-lg">
-                                        <Users className="w-8 h-8 mb-3" />
-                                        <h4 className="text-2xl mb-2">
-                                            Community Infrastructure
-                                        </h4>
-                                        <p className="text-background/80">
-                                            Development of public facilities
-                                            including bridges, classes, clinics,
-                                            and more
-                                        </p>
-                                    </div>
+                                    <Users className="w-8 h-8 mb-3" />
+                                    <h4 className="text-2xl mb-2">
+                                        Community Infrastructure
+                                    </h4>
+                                    <p className="text-background/80">
+                                        Development of public facilities
+                                        including bridges, classes, clinics, and
+                                        more
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -115,7 +113,7 @@ export function ProgramsBanner() {
                 </div>
 
                 {/* Education & Knowledge */}
-                <div className="mb-32">
+                <div className="lg:mb-32 mb-16">
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start mb-12">
                         <div className="lg:col-span-1 lg:order-2 lg:sticky lg:top-24">
                             <div className="inline-flex items-center gap-4 mb-6 bg-[#8b5723]/10 px-6 py-3 rounded-full">
@@ -203,7 +201,7 @@ export function ProgramsBanner() {
                 </div>
 
                 {/* Economic Empowerment */}
-                <div className="mb-32">
+                <div className="lg:mb-0 mb-6">
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
                         <div className="lg:col-span-1 lg:sticky lg:top-24">
                             <div className="inline-flex items-center gap-4 mb-6 bg-[#8b5723]/5 px-6 py-3 rounded-full">

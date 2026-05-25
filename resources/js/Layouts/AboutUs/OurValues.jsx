@@ -21,7 +21,7 @@ export function OurValues() {
             </div>
 
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-20">
+                <div className="text-center mb-2">
                     <h2 className="text-4xl md:text-5xl mb-4 text-foreground">
                         Our{" "}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8B6835] to-[#D4A574]">

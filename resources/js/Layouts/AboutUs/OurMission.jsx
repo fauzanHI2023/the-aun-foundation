@@ -3,7 +3,7 @@ import { Heart, Target, Award, Users, Handshake } from "lucide-react";
 
 export function OurMission() {
     return (
-        <section className="py-24 relative overflow-hidden">
+        <section className="lg:py-24 py-8 relative overflow-hidden">
             {/* Background Decoration */}
             <div className="absolute inset-0 bg-gradient-to-b from-secondary/20 via-transparent to-secondary/20" />
             <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#8B6835]/5 rounded-full blur-3xl animate-pulse-slow" />
@@ -15,7 +15,7 @@ export function OurMission() {
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
                 <div className="text-center mb-20">
-                    <h2 className="text-4xl md:text-5xl mb-4 text-foreground">
+                    <h2 className="text-4xl md:text-5xl mb-4 text-foreground font-semibold">
                         Our{" "}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8B6835] to-[#D4A574]">
                             Direction
@@ -31,13 +31,13 @@ export function OurMission() {
                 <div className="mb-32 relative">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                         {/* Vision Images - Asymmetric */}
-                        <div className="lg:col-span-7 relative h-[600px]">
+                        <div className="lg:col-span-7 relative lg:h-[600px] h-[300px]">
                             {/* Main Image */}
-                            <div className="absolute top-0 left-0 w-[70%] h-[65%] group">
+                            <div className="absolute top-0 left-0 w-[70%] aspect-[2/2] group">
                                 <div className="absolute -inset-4 bg-gradient-to-br from-[#8B6835]/30 to-[#D4A574]/20 rounded-[3rem] blur-2xl group-hover:blur-3xl transition-all" />
                                 <div className="relative h-full rounded-[3rem] overflow-hidden">
                                     <img
-                                        src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=800"
+                                        src="/images/IMG_3739.jpg"
                                         alt="Vision Community"
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                     />
@@ -46,11 +46,11 @@ export function OurMission() {
                             </div>
 
                             {/* Secondary Image */}
-                            <div className="absolute bottom-0 right-0 w-[55%] h-[50%] group">
+                            <div className="absolute bottom-0 right-0 w-[55%] aspect-[2/2] group">
                                 <div className="absolute -inset-4 bg-gradient-to-tl from-accent/30 to-[#8B6835]/20 rounded-[2.5rem] blur-2xl group-hover:blur-3xl transition-all" />
                                 <div className="relative h-full rounded-[2.5rem] overflow-hidden ring-4 ring-white">
                                     <img
-                                        src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600"
+                                        src="/images/IMG_9350.jpg"
                                         alt="Vision Support"
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                     />
@@ -205,13 +205,13 @@ export function OurMission() {
                         </div>
 
                         {/* Mission Images - Asymmetric Reverse */}
-                        <div className="lg:col-span-7 lg:order-2 relative h-[600px]">
+                        <div className="lg:col-span-7 lg:order-2 relative lg:h-[600px] h-[300px]">
                             {/* Main Image */}
-                            <div className="absolute top-0 right-0 w-[70%] h-[65%] group">
+                            <div className="absolute top-0 right-0 w-[70%] aspect-[2/2] group">
                                 <div className="absolute -inset-4 bg-gradient-to-bl from-accent/30 to-[#8B6835]/20 rounded-[3rem] blur-2xl group-hover:blur-3xl transition-all" />
                                 <div className="relative h-full rounded-[3rem] overflow-hidden">
                                     <img
-                                        src="https://images.unsplash.com/photo-1554721299-e0b8aa7666ce?w=800"
+                                        src="/images/IMG_3769.jpg"
                                         alt="Mission Education"
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                     />
@@ -220,11 +220,11 @@ export function OurMission() {
                             </div>
 
                             {/* Secondary Image */}
-                            <div className="absolute bottom-0 left-0 w-[55%] h-[50%] group">
+                            <div className="absolute bottom-0 left-0 w-[55%] aspect-[2/2] group">
                                 <div className="absolute -inset-4 bg-gradient-to-tr from-[#8B6835]/30 to-[#D4A574]/20 rounded-[2.5rem] blur-2xl group-hover:blur-3xl transition-all" />
                                 <div className="relative h-full rounded-[2.5rem] overflow-hidden ring-4 ring-white">
                                     <img
-                                        src="https://images.unsplash.com/photo-1617817546276-80b86dd60151?w=600"
+                                        src="/images/IMG_9559 (1).jpg"
                                         alt="Mission Empowerment"
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                     />

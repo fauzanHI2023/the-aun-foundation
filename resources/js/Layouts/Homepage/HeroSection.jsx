@@ -40,12 +40,12 @@ export function HeroSection() {
             </div> */}
 
                         <div className="space-y-6">
-                            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 leading-[1.1]">
+                            <h1 className="text-3xl md:text-6xl lg:text-7xl font-black text-gray-900 leading-[1.1]">
                                 Nurturing
                                 <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-[#754c24] to-amber-600">
                                     Hope & Change
                                 </span>
-                                <span className="block mt-2 text-4xl md:text-5xl lg:text-6xl">
+                                <span className="block mt-2 text-3xl md:text-5xl lg:text-6xl">
                                     for Communities
                                 </span>
                             </h1>
@@ -61,10 +61,10 @@ export function HeroSection() {
                             </p>
                         </div>
 
-                        <div className="flex flex-col sm:flex-row gap-4 pt-6">
+                        <div className="flex flex-row sm:flex-row gap-4 pt-6">
                             <button
                                 onClick={scrollToContact}
-                                className="group bg-gradient-to-r from-[#412c17] to-[#5d3a1c] text-white px-8 py-5 rounded-md hover:shadow-2xl transition-all flex items-center justify-center gap-3 text-lg font-bold"
+                                className="group bg-gradient-to-r from-[#412c17] to-[#5d3a1c] text-white lg:px-8 lg:py-5 px-4 py-2 rounded-md hover:shadow-2xl transition-all flex items-center justify-center gap-3 lg:text-lg text-base font-bold"
                             >
                                 Start Making Impact
                                 <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
@@ -79,7 +79,7 @@ export function HeroSection() {
                                         });
                                     }
                                 }}
-                                className="bg-white border border-[#754c24] text-[#754c24] px-8 py-5 rounded-md hover:bg-[#342414] hover:text-white transition-all text-lg font-bold shadow-lg"
+                                className="bg-white border border-[#754c24] text-[#754c24] lg:px-8 lg:py-5 px-4 py-2 rounded-md hover:bg-[#342414] hover:text-white transition-all lg:text-lg text-base font-bold shadow-lg"
                             >
                                 Our Story
                             </button>
@@ -121,9 +121,9 @@ export function HeroSection() {
                             <div className="absolute -inset-4 bg-gradient-to-br from-[#754c24] to-amber-600 rounded-[3rem] rotate-3 opacity-20"></div>
                             <div className="relative rounded-[3rem] overflow-hidden shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-500">
                                 <img
-                                    src="https://images.unsplash.com/photo-1758599668547-2b1192c10abb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGFyaXR5JTIwdm9sdW50ZWVyJTIwdGVhbXdvcmt8ZW58MXx8fHwxNzc2NjcwNjAxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                                    src="/images/IMG_3620.jpg"
                                     alt="Community volunteering"
-                                    className="w-full h-[450px] lg:h-[550px] object-cover"
+                                    className="w-full h-[270px] lg:h-[550px] object-cover"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#754c24]/40 to-transparent"></div>
                             </div>
@@ -131,7 +131,7 @@ export function HeroSection() {
                             {/* Small floating image 1 */}
                             <div className="absolute -bottom-8 -left-8 w-48 h-48 rounded-3xl overflow-hidden shadow-xl border-4 border-white transform rotate-6 hover:rotate-12 transition-transform duration-500 hidden md:block">
                                 <img
-                                    src="https://images.unsplash.com/photo-1758598737700-739b306988e0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYXBweSUyMGNoaWxkcmVuJTIwc21pbGluZyUyMHBvcnRyYWl0fGVufDF8fHx8MTc3NjY3MDg0OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                                    src="/images/IMG_9749.jpg"
                                     alt="Happy children"
                                     className="w-full h-full object-cover"
                                 />
@@ -140,7 +140,7 @@ export function HeroSection() {
                             {/* Small floating image 2 */}
                             <div className="absolute -top-8 -right-8 w-40 h-40 rounded-3xl overflow-hidden shadow-xl border-4 border-white transform -rotate-12 hover:-rotate-6 transition-transform duration-500 hidden lg:block">
                                 <img
-                                    src="https://images.unsplash.com/photo-1630510590497-e69fac21bfbd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaXZlcnNlJTIwcGVvcGxlJTIwaGFuZHMlMjB0b2dldGhlciUyMHRlYW13b3JrfGVufDF8fHx8MTc3NjY3MDg0OHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                                    src="/images/Copy of 2025_03_15_16_17_IMG_3343.jpg"
                                     alt="Teamwork"
                                     className="w-full h-full object-cover"
                                 />

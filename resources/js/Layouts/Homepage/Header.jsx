@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { usePage } from "@inertiajs/react";
 
 export function Header() {
     const [isOpen, setIsOpen] = useState(false);
@@ -17,6 +18,7 @@ export function Header() {
     const [programsData, setProgramsData] = useState([]);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
+    const { url } = usePage();
 
     const [searchResults, setSearchResults] = useState({
         news: [],
@@ -95,7 +97,7 @@ export function Header() {
                                 className="flex items-center"
                             >
                                 <img
-                                    src="/images/logo aun baru.png"
+                                    src="/images/logo header aun.png"
                                     alt="Rembulan Relief"
                                     className="h-16 w-auto"
                                 />
@@ -104,24 +106,35 @@ export function Header() {
 
                         {/* Desktop Navigation */}
                         <nav className="hidden md:flex items-center gap-8">
-                            {navItems.map((item, index) => (
-                                <motion.a
-                                    key={item.name}
-                                    href={item.href}
-                                    initial={{ opacity: 0, y: -20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.1 * index }}
-                                    className="text-gray-700 hover:text-[#ef1968] transition-colors font-medium"
-                                >
-                                    {item.name}
-                                </motion.a>
-                            ))}
+                            {navItems.map((item, index) => {
+                                const isActive = url === item.href;
+                                return (
+                                    <motion.a
+                                        key={item.name}
+                                        href={item.href}
+                                        initial={{ opacity: 0, y: -20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: 0.1 * index }}
+                                        className={`relative transition-colors ${
+                                            isActive
+                                                ? "text-[#7b542d] font-bold"
+                                                : "text-gray-700 hover:text-[#7b542d] font-medium"
+                                        }`}
+                                    >
+                                        {item.name}
+                                        {isActive && (
+                                            <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#7b542d] rounded-full" />
+                                        )}
+                                    </motion.a>
+                                );
+                            })}
+
                             <motion.button
                                 onClick={() => setIsSearchOpen(true)}
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ delay: 0.5 }}
-                                className="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-[#ef1968] transition-colors"
+                                className="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-[#7b542d] transition-colors"
                                 style={{ borderRadius: "10px 10px 10px 2px" }}
                             >
                                 <Search size={20} />
@@ -175,9 +188,9 @@ export function Header() {
                         }}
                         className="fixed top-0 left-0 right-0 bottom-0 z-[90] md:hidden overflow-y-auto"
                         style={{
-                            backgroundColor: "#ef1968",
+                            backgroundColor: "#754c24",
                             background:
-                                "linear-gradient(135deg, #ef1968 0%, #d01558 100%)",
+                                "linear-gradient(135deg, #754c24 0%, #2a1f15 100%)",
                         }}
                     >
                         {/* Close Button - Inside Overlay */}
@@ -233,19 +246,9 @@ export function Header() {
                                 className="space-y-4 mt-6"
                             >
                                 {/* Donation Button */}
-                                <button
-                                    className="w-full bg-white text-[#ef1968] px-8 py-4 font-bold text-base hover:bg-[#f7c498] hover:text-white transition-all"
-                                    style={{
-                                        borderRadius: "24px 24px 24px 4px",
-                                    }}
-                                >
+                                <button className="w-full rounded-xl bg-white text-[#2a1f15] px-8 py-4 font-bold text-base hover:bg-[#825830] hover:text-white transition-all">
                                     Donasi Sekarang
                                 </button>
-
-                                {/* Tagline */}
-                                <p className="text-white/70 text-xs text-center italic">
-                                    "Dignity For A Better Future"
-                                </p>
                             </motion.div>
                         </div>
                     </motion.div>
@@ -276,15 +279,15 @@ export function Header() {
                         >
                             {/* Search Box */}
                             <div
-                                className="bg-white/95 backdrop-blur-xl shadow-2xl overflow-hidden"
+                                className="bg-[#1e1206] backdrop-blur-xl shadow-2xl overflow-hidden"
                                 style={{ borderRadius: "32px 32px 32px 8px" }}
                             >
                                 {/* Search Input with Gradient Border */}
                                 <div className="relative">
                                     <div className="absolute inset-0 bg-gradient-to-r from-[#ef1968]/20 via-[#f7c498]/20 to-[#ef1968]/20 blur-xl opacity-50" />
-                                    <div className="relative bg-white p-6 md:p-8">
+                                    <div className="relative bg-[#ffffff] p-6 md:p-8">
                                         <div className="flex items-center gap-4">
-                                            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#ef1968] to-[#f7c498] flex items-center justify-center flex-shrink-0">
+                                            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#6a4d30] to-[#976e45] flex items-center justify-center flex-shrink-0">
                                                 <Search
                                                     className="text-white"
                                                     size={22}
@@ -300,7 +303,7 @@ export function Header() {
                                                     )
                                                 }
                                                 autoFocus
-                                                className="border-none flex-1 text-xl outline-none text-gray-900 placeholder:text-gray-400"
+                                                className="bg-white border-none flex-1 text-xl outline-none text-gray-900 placeholder:text-gray-400"
                                             />
                                             <button
                                                 onClick={() =>
@@ -332,15 +335,15 @@ export function Header() {
                                                     className="w-20 h-20 rounded-3xl bg-gradient-to-br from-[#ef1968]/10 to-[#f7c498]/10 flex items-center justify-center"
                                                 >
                                                     <Search
-                                                        className="text-[#ef1968]"
+                                                        className="text-white"
                                                         size={36}
                                                     />
                                                 </motion.div>
                                             </div>
-                                            <h3 className="text-xl font-bold text-gray-900 mb-2">
+                                            <h3 className="text-xl font-bold text-white mb-2">
                                                 Discover Our Content
                                             </h3>
-                                            <p className="text-gray-500">
+                                            <p className="text-white">
                                                 Search for inspiring news
                                                 articles and impactful programs
                                             </p>
@@ -357,10 +360,10 @@ export function Header() {
                                                         scale: 1,
                                                         opacity: 1,
                                                     }}
-                                                    className="w-20 h-20 rounded-3xl bg-gray-100 flex items-center justify-center"
+                                                    className="w-20 h-20 rounded-3xl bg-[#231507] flex items-center justify-center"
                                                 >
                                                     <Search
-                                                        className="text-gray-400"
+                                                        className="text-white"
                                                         size={36}
                                                     />
                                                 </motion.div>
@@ -377,9 +380,9 @@ export function Header() {
                                         <div className="p-6 md:p-8 space-y-8">
                                             {/* Results Header */}
                                             <div className="flex items-center justify-between pb-4 border-b border-gray-100">
-                                                <p className="text-sm text-gray-600">
+                                                <p className="text-sm text-white">
                                                     Found{" "}
-                                                    <span className="font-bold text-[#ef1968]">
+                                                    <span className="font-bold text-[#624120]">
                                                         {totalResults}
                                                     </span>{" "}
                                                     {totalResults === 1
@@ -402,17 +405,17 @@ export function Header() {
                                                     transition={{ delay: 0.1 }}
                                                 >
                                                     <div className="flex items-center gap-3 mb-6">
-                                                        <div className="w-10 h-10 rounded-xl bg-[#ef1968]/10 flex items-center justify-center">
+                                                        <div className="w-10 h-10 rounded-xl bg-[#63401e] flex items-center justify-center">
                                                             <Calendar
-                                                                className="text-[#ef1968]"
+                                                                className="text-[#ab7137]"
                                                                 size={18}
                                                             />
                                                         </div>
                                                         <div>
-                                                            <h3 className="font-bold text-gray-900">
+                                                            <h3 className="font-bold text-[#d2985e]">
                                                                 News Articles
                                                             </h3>
-                                                            <p className="text-xs text-gray-500">
+                                                            <p className="text-xs text-[#885d32]">
                                                                 {
                                                                     searchResults
                                                                         .news
@@ -463,7 +466,7 @@ export function Header() {
                                                                         className="group block"
                                                                     >
                                                                         <div
-                                                                            className="p-5 bg-white hover:bg-gradient-to-br hover:from-gray-50 hover:to-white border border-gray-100 hover:border-gray-200 transition-all hover:shadow-lg"
+                                                                            className="p-5 bg-[#63411f] hover:bg-gradient-to-br hover:from-[#614426] hover:to-[#855b30] transition-all hover:shadow-lg"
                                                                             style={{
                                                                                 borderRadius:
                                                                                     "20px 20px 20px 5px",
@@ -501,17 +504,17 @@ export function Header() {
                                                                                             }
                                                                                         </span>
                                                                                     </div>
-                                                                                    <h4 className="font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-[#ef1968] transition-colors leading-snug">
+                                                                                    <h4 className="font-bold text-white mb-2 line-clamp-2 group-hover:text-[#d1975d] transition-colors leading-snug">
                                                                                         {
                                                                                             article.judul
                                                                                         }
                                                                                     </h4>
-                                                                                    <p className="text-sm text-gray-600 line-clamp-2 mb-3 leading-relaxed">
+                                                                                    <p className="text-sm text-white line-clamp-2 mb-3 leading-relaxed">
                                                                                         {
                                                                                             article.konten
                                                                                         }
                                                                                     </p>
-                                                                                    <div className="flex items-center gap-4 text-xs text-gray-500">
+                                                                                    <div className="flex items-center gap-4 text-xs text-white">
                                                                                         <span className="flex items-center gap-1.5">
                                                                                             <Calendar
                                                                                                 size={
@@ -689,10 +692,10 @@ export function Header() {
                                 >
                                     <p className="text-sm text-white/70">
                                         <span className="font-semibold">
-                                            Tip:
+                                            Tips:
                                         </span>{" "}
-                                        Try searching for "education", "health",
-                                        "protection", or "environment"
+                                        Try searching for "community",
+                                        "education", "economic", or "seasonal"
                                     </p>
                                 </motion.div>
                             )}

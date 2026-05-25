@@ -18,7 +18,7 @@ import {
 
 export function SeasonalProgramSection() {
     return (
-        <section className="py-24 relative overflow-hidden">
+        <section className="lg:py-16 py-6 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/10 to-background" />
             <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-accent/5 rounded-full blur-3xl animate-pulse-slow" />
 
@@ -92,23 +92,47 @@ export function SeasonalProgramSection() {
                             </div>
                         </div>
 
-                        <div className="lg:col-span-7 relative h-[500px]">
-                            <div className="absolute top-0 right-0 w-[65%] h-[70%] group">
-                                <div className="absolute -inset-4 bg-gradient-to-bl from-[#8b5723]/30 to-[#ac6c29]/20 blur-2xl group-hover:blur-3xl transition-all" />
-                                <img
-                                    src="https://images.unsplash.com/photo-1640222495180-60a907961fa2?w=800"
-                                    alt="Ramadan iftar"
-                                    className="relative w-full h-full object-cover rounded-[2.5rem] ring-4 ring-[#ffffff] group-hover:scale-105 transition-transform duration-700"
-                                />
-                            </div>
+                        <div className="lg:col-span-7 relative h-[300px] sm:h-[380px] md:h-[450px] lg:h-[500px] lg:mt-0 mt-[3rem]">
+                            <div className="lg:hidden">
+                                <div className="absolute bottom-[-20%] left-0 w-[65%] aspect-[2/2] group">
+                                    <div className="absolute -inset-4 bg-gradient-to-br from-accent/30 to-primary/20 blur-2xl group-hover:blur-3xl transition-all" />
 
-                            <div className="absolute bottom-0 left-0 w-[50%] h-[45%] group">
-                                <div className="absolute -inset-3 bg-gradient-to-tr from-accent/30 to-[#8b5723]/20 blur-2xl group-hover:blur-3xl transition-all" />
-                                <img
-                                    src="https://images.unsplash.com/photo-1776855828554-dfbeed18ffa2?w=600"
-                                    alt="Community sharing"
-                                    className="relative w-full h-full object-cover rounded-[2rem] ring-4 ring-[#ffffff] group-hover:scale-105 transition-transform duration-700"
-                                />
+                                    <img
+                                        src="https://images.unsplash.com/photo-1640222495180-60a907961fa2?w=800"
+                                        alt="Qurban distribution"
+                                        className="relative w-full h-full object-cover rounded-[2rem] sm:rounded-[2.5rem] ring-4 ring-white group-hover:scale-105 transition-transform duration-700"
+                                    />
+                                </div>
+
+                                {/* IMAGE 2 */}
+                                <div className="absolute top-0 right-0 w-[58%] aspect-[2/2] group">
+                                    <div className="absolute -inset-3 bg-gradient-to-tl from-primary/30 to-accent/20 blur-2xl group-hover:blur-3xl transition-all" />
+
+                                    <img
+                                        src="https://images.unsplash.com/photo-1776855828554-dfbeed18ffa2?w=600"
+                                        alt="Community support"
+                                        className="relative w-full h-full object-cover rounded-[1.5rem] sm:rounded-[2rem] ring-4 ring-white group-hover:scale-105 transition-transform duration-700"
+                                    />
+                                </div>
+                            </div>
+                            <div className="hidden lg:block relative h-[500px]">
+                                <div className="absolute top-0 right-0 w-[65%] lg:h-[70%] h-[40%] group">
+                                    <div className="absolute -inset-4 bg-gradient-to-bl from-[#8b5723]/30 to-[#ac6c29]/20 blur-2xl group-hover:blur-3xl transition-all" />
+                                    <img
+                                        src="https://images.unsplash.com/photo-1640222495180-60a907961fa2?w=800"
+                                        alt="Ramadan iftar"
+                                        className="relative w-full h-full object-cover rounded-[2.5rem] ring-4 ring-[#ffffff] group-hover:scale-105 transition-transform duration-700"
+                                    />
+                                </div>
+
+                                <div className="absolute bottom-0 left-0 w-[50%] h-[45%] group">
+                                    <div className="absolute -inset-3 bg-gradient-to-tr from-accent/30 to-[#8b5723]/20 blur-2xl group-hover:blur-3xl transition-all" />
+                                    <img
+                                        src="https://images.unsplash.com/photo-1776855828554-dfbeed18ffa2?w=600"
+                                        alt="Community sharing"
+                                        className="relative w-full h-full object-cover rounded-[2rem] ring-4 ring-[#ffffff] group-hover:scale-105 transition-transform duration-700"
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -117,8 +141,8 @@ export function SeasonalProgramSection() {
                 {/* Qurban Programs - Reverse Layout */}
                 <div>
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                        <div className="lg:col-span-7 lg:order-1 relative h-[500px]">
-                            <div className="absolute top-0 left-0 w-[65%] h-[70%] group">
+                        <div className="lg:col-span-7 relative h-[300px] sm:h-[380px] md:h-[450px] lg:h-[500px] lg:mt-0 mt-[3rem]">
+                            {/* <div className="absolute top-0 left-0 w-[65%] h-[70%] group">
                                 <div className="absolute -inset-4 bg-gradient-to-br from-accent/30 to-primary/20 blur-2xl group-hover:blur-3xl transition-all" />
                                 <img
                                     src="https://images.unsplash.com/photo-1710092784814-4a6f158913b8?w=800"
@@ -134,6 +158,52 @@ export function SeasonalProgramSection() {
                                     alt="Community support"
                                     className="relative w-full h-full object-cover rounded-[2rem] ring-4 ring-[#ffffff] group-hover:scale-105 transition-transform duration-700"
                                 />
+                            </div> */}
+                            {/* MOBILE & TABLET */}
+                            <div className="lg:hidden">
+                                <div className="absolute top-0 left-0 w-[65%] aspect-[2/2] group">
+                                    <div className="absolute -inset-4 bg-gradient-to-br from-accent/30 to-primary/20 blur-2xl group-hover:blur-3xl transition-all" />
+
+                                    <img
+                                        src="https://images.unsplash.com/photo-1710092784814-4a6f158913b8?w=800"
+                                        alt="Qurban distribution"
+                                        className="relative w-full h-full object-cover rounded-[2rem] sm:rounded-[2.5rem] ring-4 ring-white group-hover:scale-105 transition-transform duration-700"
+                                    />
+                                </div>
+
+                                {/* IMAGE 2 */}
+                                <div className="absolute bottom-[-20%] right-0 w-[58%] aspect-[2/2] group">
+                                    <div className="absolute -inset-3 bg-gradient-to-tl from-primary/30 to-accent/20 blur-2xl group-hover:blur-3xl transition-all" />
+
+                                    <img
+                                        src="https://images.unsplash.com/photo-1502781252888-9143ba7f074e?w=600"
+                                        alt="Community support"
+                                        className="relative w-full h-full object-cover rounded-[1.5rem] sm:rounded-[2rem] ring-4 ring-white group-hover:scale-105 transition-transform duration-700"
+                                    />
+                                </div>
+                            </div>
+
+                            {/* DESKTOP */}
+                            <div className="hidden lg:block relative h-[500px]">
+                                <div className="absolute top-0 left-0 w-[65%] h-[70%] group">
+                                    <div className="absolute -inset-4 bg-gradient-to-br from-accent/30 to-primary/20 blur-2xl group-hover:blur-3xl transition-all" />
+
+                                    <img
+                                        src="https://images.unsplash.com/photo-1710092784814-4a6f158913b8?w=800"
+                                        alt="Qurban distribution"
+                                        className="relative w-full h-full object-cover rounded-[2.5rem] ring-4 ring-white group-hover:scale-105 transition-transform duration-700"
+                                    />
+                                </div>
+
+                                <div className="absolute bottom-0 right-0 w-[50%] h-[45%] group">
+                                    <div className="absolute -inset-3 bg-gradient-to-tl from-primary/30 to-accent/20 blur-2xl group-hover:blur-3xl transition-all" />
+
+                                    <img
+                                        src="https://images.unsplash.com/photo-1502781252888-9143ba7f074e?w=600"
+                                        alt="Community support"
+                                        className="relative w-full h-full object-cover rounded-[2rem] ring-4 ring-white group-hover:scale-105 transition-transform duration-700"
+                                    />
+                                </div>
                             </div>
                         </div>
 

@@ -13,11 +13,11 @@ export function HeroSection() {
     return (
         <section
             ref={containerRef}
-            className="relative h-screen flex items-center justify-center overflow-hidden"
+            className="relative lg:h-screen h-[450px] flex items-center justify-center overflow-hidden"
         >
             <motion.div style={{ y }} className="absolute inset-0">
                 <img
-                    src="https://images.unsplash.com/photo-1569003376670-596a186b90f8?w=1600&q=80"
+                    src="/images/IMG_3728 (1).jpg"
                     alt="Hope for the future"
                     className="w-full h-full object-cover"
                 />

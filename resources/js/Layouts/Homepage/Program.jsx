@@ -13,7 +13,7 @@ const programs = [
         title: "Community Facilities",
         description:
             "Building and improving essential infrastructure to strengthen communities and enhance quality of life.",
-        image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&q=80",
+        image: "/images/IMG_9777.jpg",
         stat: "100+",
         statLabel: "Facilities Built",
         color: "#754c24",
@@ -23,7 +23,7 @@ const programs = [
         title: "Education & Knowledge",
         description:
             "Empowering individuals through education, training, and access to learning opportunities.",
-        image: "https://images.unsplash.com/photo-1758270704384-9df36d94a29d?w=1200&q=80",
+        image: "/images/IMG_9848.jpg",
         stat: "5,000+",
         statLabel: "Students Supported",
         color: "#000000",
@@ -33,7 +33,7 @@ const programs = [
         title: "Economic Empowerment",
         description:
             "Supporting sustainable livelihoods and economic independence for vulnerable communities.",
-        image: "https://images.unsplash.com/photo-1562910859-be83f1df7b56?w=1200&q=80",
+        image: "/images/Copy of 2025_03_15_16_33_IMG_3374.jpg",
         stat: "2,500+",
         statLabel: "Families Empowered",
         color: "#754c24",
@@ -44,21 +44,21 @@ export function Programs() {
     const [hoveredIndex, setHoveredIndex] = useState(null);
 
     return (
-        <section id="values" className="bg-white py-32">
+        <section id="values" className="bg-white md:py-16 py-8">
             <div className="max-w-7xl mx-auto px-6 lg:px-12">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="mb-16"
+                    className="md:mb-16 mb:8"
                 >
                     <div className="flex items-center justify-between">
                         <div>
                             <div className="inline-block mb-6 px-4 py-1.5 bg-black text-white text-xs tracking-wider">
                                 EXPLORE PROGRAMS
                             </div>
-                            <h2 className="text-5xl lg:text-6xl font-bold text-black mb-4 leading-tight tracking-tight">
+                            <h2 className="text-3xl lg:text-6xl font-bold text-black mb-4 leading-tight tracking-tight">
                                 Creating Sustainable Impact
                             </h2>
                         </div>
@@ -183,7 +183,7 @@ export function Programs() {
                 </div>
             </div>
 
-            <div className="bg-[#f5f5f5] mt-32">
+            <div className="bg-[#f5f5f5] md:mt-32 mt-12">
                 <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-20">
                     <div className="grid grid-cols-2 md:grid-cols-5 gap-12">
                         {[
@@ -201,7 +201,7 @@ export function Programs() {
                                 transition={{ delay: i * 0.1 }}
                                 className="text-center"
                             >
-                                <div className="text-5xl font-bold text-black mb-2">
+                                <div className="text-3xl font-bold text-black mb-2">
                                     {stat.number}
                                 </div>
                                 <div className="text-xs text-black/60 tracking-wider">

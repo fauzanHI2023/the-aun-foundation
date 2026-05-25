@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Clock, ChevronRight, Users, GraduationCap } from "lucide-react";
+import axios from "axios";
 
 export function NewsEducationSection() {
     const educationNews = [
@@ -29,8 +30,19 @@ export function NewsEducationSection() {
             readTime: "4 min read",
         },
     ];
+
+    const [newsArticles, setNewsArticles] = useState([]);
+
+    useEffect(() => {
+        axios.get("/api/beritas").then((res) => setNewsArticles(res.data));
+    }, []);
+
+    const educationArticles = newsArticles.filter(
+        (item) => item.category === "education" && item.selected_post === 0
+    );
+
     return (
-        <section className="py-24 bg-gradient-to-br from-black via-[#1a1410] to-black text-white relative overflow-hidden">
+        <section className="lg:py-24 py-8 bg-gradient-to-br from-black via-[#1a1410] to-black text-white relative overflow-hidden">
             <div className="absolute inset-0 opacity-10">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_#ac6c29_1px,_transparent_1px)] bg-[length:50px_50px]" />
             </div>
@@ -43,11 +55,11 @@ export function NewsEducationSection() {
                     className="flex items-center justify-between mb-12"
                 >
                     <div className="flex items-center gap-4">
-                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#ac6c29] to-[#8b5723] flex items-center justify-center">
+                        {/* <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#ac6c29] to-[#8b5723] flex items-center justify-center">
                             <GraduationCap className="h-8 w-8 text-white" />
-                        </div>
+                        </div> */}
                         <div>
-                            <h2 className="text-4xl lg:text-5xl font-bold">
+                            <h2 className="text-3xl lg:text-5xl font-bold">
                                 Education &{" "}
                                 <span className="text-[#ac6c29]">
                                     Knowledge
@@ -60,63 +72,67 @@ export function NewsEducationSection() {
                     </div>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {educationNews.map((news, index) => (
-                        <motion.article
-                            key={news.title}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className={`group relative rounded-3xl overflow-hidden cursor-pointer ${
-                                index === 0
-                                    ? "md:col-span-2 lg:col-span-2 lg:row-span-2"
-                                    : ""
-                            }`}
-                        >
-                            <div
-                                className={`relative ${
-                                    index === 0 ? "h-[600px]" : "h-80"
-                                } overflow-hidden`}
+                {educationArticles.length > 0 && (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {educationArticles?.map((article, index) => (
+                            <motion.article
+                                key={article.title}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                className={`group relative rounded-3xl overflow-hidden cursor-pointer ${
+                                    index === 0
+                                        ? "md:col-span-2 lg:col-span-2 lg:row-span-2"
+                                        : ""
+                                }`}
                             >
-                                <img
-                                    src={news.image}
-                                    alt={news.title}
-                                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+                                <div
+                                    className={`relative ${
+                                        index === 0
+                                            ? "lg:h-[600px] h-[22rem]"
+                                            : "h-80"
+                                    } overflow-hidden`}
+                                >
+                                    <img
+                                        src={`${article.image}`}
+                                        alt={article.title}
+                                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
 
-                                <div className="absolute inset-0 flex flex-col justify-end p-8">
-                                    <span className="text-[#ac6c29] text-sm font-medium mb-3">
-                                        {news.date}
-                                    </span>
-                                    <h3
-                                        className={`font-bold text-white mb-3 group-hover:text-[#ac6c29] transition-colors ${
-                                            index === 0
-                                                ? "text-3xl lg:text-4xl"
-                                                : "text-xl"
-                                        }`}
-                                    >
-                                        {news.title}
-                                    </h3>
-                                    <p
-                                        className={`text-white/90 mb-4 ${
-                                            index === 0
-                                                ? "text-lg line-clamp-2"
-                                                : "text-sm line-clamp-2"
-                                        }`}
-                                    >
-                                        {news.excerpt}
-                                    </p>
-                                    <div className="flex items-center text-white/80 text-sm">
-                                        <Clock className="h-4 w-4 mr-1.5" />
-                                        {news.readTime}
+                                    <div className="absolute inset-0 flex flex-col justify-end p-8">
+                                        <span className="text-[#ac6c29] text-sm font-medium mb-3">
+                                            {article.date}
+                                        </span>
+                                        <h3
+                                            className={`font-bold text-white mb-3 group-hover:text-[#ac6c29] transition-colors ${
+                                                index === 0
+                                                    ? "text-3xl lg:text-4xl"
+                                                    : "text-xl"
+                                            }`}
+                                        >
+                                            {article.title}
+                                        </h3>
+                                        <p
+                                            className={`text-white/90 mb-4 ${
+                                                index === 0
+                                                    ? "text-lg line-clamp-2"
+                                                    : "text-sm line-clamp-2"
+                                            }`}
+                                        >
+                                            {article.excerpt}
+                                        </p>
+                                        <div className="flex items-center text-white/80 text-sm">
+                                            <Clock className="h-4 w-4 mr-1.5" />
+                                            {article.readTime}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </motion.article>
-                    ))}
-                </div>
+                            </motion.article>
+                        ))}
+                    </div>
+                )}
             </div>
         </section>
     );

@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Clock, ArrowRight, Sparkles } from "lucide-react";
+import axios from "axios";
 
 export function NewsSeasonalSection() {
     const seasonalNews = [
@@ -28,7 +29,28 @@ export function NewsSeasonalSection() {
             date: "March 20, 2026",
             readTime: "3 min read",
         },
+        {
+            title: "Eid Celebration Brings Joy to 1,000 Children",
+            excerpt:
+                "Special gifts and activities create memorable moments for young ones.",
+            image: "https://images.unsplash.com/photo-1478476868527-002ae3f3e159?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+            date: "March 20, 2026",
+            readTime: "3 min read",
+        },
     ];
+
+    const [newsArticles, setNewsArticles] = useState([]);
+
+    useEffect(() => {
+        axios.get("/api/beritas").then((res) => setNewsArticles(res.data));
+    }, []);
+
+    const seasonalArticles = newsArticles.filter(
+        (item) =>
+            (item.category === "ramadhan" || item.category === "qurban") &&
+            item.selected_post === 0
+    );
+
     return (
         <section className="py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#ac6c29]/5 rounded-full blur-3xl" />
@@ -56,55 +78,58 @@ export function NewsSeasonalSection() {
                     </div>
                 </motion.div>
 
-                <div className="flex gap-6 overflow-x-auto pb-6 no-scrollbar snap-x snap-mandatory">
-                    {seasonalNews.map((news, index) => (
-                        <motion.article
-                            key={news.title}
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className="group flex-shrink-0 w-96 snap-center"
-                        >
-                            <div className="relative h-80 rounded-3xl overflow-hidden mb-6">
-                                <img
-                                    src={news.image}
-                                    alt={news.title}
-                                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                                <div className="absolute top-6 left-6">
-                                    <span className="px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium border border-white/30">
-                                        Seasonal
-                                    </span>
+                {seasonalArticles.length > 0 && (
+                    <div className="flex gap-6 overflow-x-auto pb-6 no-scrollbar snap-x snap-mandatory">
+                        {seasonalArticles?.map((article, index) => (
+                            <motion.article
+                                key={article.title}
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                className="group flex-shrink-0 w-96 snap-center"
+                            >
+                                <div className="relative h-80 rounded-3xl overflow-hidden mb-6">
+                                    <img
+                                        src={`${article.image}`}
+                                        alt={article.title}
+                                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                                    <div className="absolute top-6 left-6">
+                                        <span className="px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium border border-white/30">
+                                            Seasonal
+                                        </span>
+                                    </div>
+                                    <div className="absolute bottom-6 left-6 right-6">
+                                        <span className="text-white/80 text-sm mb-2 block">
+                                            {article.date}
+                                        </span>
+                                        <h3 className="text-2xl font-bold text-white group-hover:text-[#ac6c29] transition-colors">
+                                            {article.title}
+                                        </h3>
+                                    </div>
                                 </div>
-                                <div className="absolute bottom-6 left-6 right-6">
-                                    <span className="text-white/80 text-sm mb-2 block">
-                                        {news.date}
+                                <p className="text-gray-600 mb-4 leading-relaxed">
+                                    {article.excerpt}
+                                </p>
+                                <div className="flex items-center justify-between">
+                                    <span className="flex items-center text-gray-500 text-sm">
+                                        <Clock className="h-4 w-4 mr-1.5" />
+                                        {article.readTime}
                                     </span>
-                                    <h3 className="text-2xl font-bold text-white group-hover:text-[#ac6c29] transition-colors">
-                                        {news.title}
-                                    </h3>
+                                    <a
+                                        href={`/news/${article.slug}`}
+                                        className="inline-flex items-center text-[#ac6c29] font-medium hover:gap-2 gap-1 transition-all"
+                                    >
+                                        Read More{" "}
+                                        <ArrowRight className="h-4 w-4" />
+                                    </a>
                                 </div>
-                            </div>
-                            <p className="text-gray-600 mb-4 leading-relaxed">
-                                {news.excerpt}
-                            </p>
-                            <div className="flex items-center justify-between">
-                                <span className="flex items-center text-gray-500 text-sm">
-                                    <Clock className="h-4 w-4 mr-1.5" />
-                                    {news.readTime}
-                                </span>
-                                <a
-                                    href="/news/1"
-                                    className="inline-flex items-center text-[#ac6c29] font-medium hover:gap-2 gap-1 transition-all"
-                                >
-                                    Read More <ArrowRight className="h-4 w-4" />
-                                </a>
-                            </div>
-                        </motion.article>
-                    ))}
-                </div>
+                            </motion.article>
+                        ))}
+                    </div>
+                )}
             </div>
         </section>
     );

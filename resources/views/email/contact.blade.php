@@ -16,7 +16,7 @@
                     <!-- Header -->
                     <tr>
                         <td style="background: linear-gradient(135deg, #ef1968, #d01558); padding:20px; text-align:center;">
-                            <img src="https://dev.rembulanrelief.org/images/logodannamasampingputihPNG.png" alt="Rembulan Relief" width="120" style="margin-bottom:10px;">
+                            <img src="https://dev.rembulanrelief.org/images/logodannamasampingputihPNG.png" alt="The AUN Foundation" width="120" style="margin-bottom:10px;">
                         </td>
                     </tr>
 
@@ -29,7 +29,7 @@
                             </p>
 
                             <!-- Info Box -->
-                            <table width="100%" cellpadding="0" cellspacing="0" style="background:#fafafa; border-radius:10px; padding:20px;">
+                            <table width="100%" cellpadding="0" cellspacing="0" style="background:#000000; border-radius:10px; padding:20px;">
                                 <tr>
                                     <td style="padding:8px 0;"><strong>Nama:</strong></td>
                                     <td style="padding:8px 0;">{{ $nama }}</td>

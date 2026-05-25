@@ -2,7 +2,18 @@ import { motion } from "framer-motion";
 
 export function OurStory() {
     return (
-        <section className="bg-white py-20 md:py-32">
+        <section className="bg-white flex flex-col py-8 md:py-24">
+            <div className="text-center mb-20">
+                <h2 className="text-4xl md:text-5xl mb-4 text-foreground font-semibold">
+                    Our{" "}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8B6835] to-[#D4A574]">
+                        Story
+                    </span>
+                </h2>
+                {/* <p className="text-foreground/60 max-w-2xl mx-auto">
+                    Guided by a clear vision and driven by purposeful mission
+                </p> */}
+            </div>
             <div className="max-w-7xl mx-auto px-6 lg:px-12">
                 <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
                     <motion.div
@@ -13,10 +24,7 @@ export function OurStory() {
                         className="lg:col-span-5"
                     >
                         <div className="sticky top-32">
-                            <div className="inline-block mb-6 px-4 py-1.5 bg-[#8B6835] text-white text-xs tracking-wider">
-                                OUR STORY
-                            </div>
-                            <h2 className="text-5xl md:text-6xl font-bold text-black mb-8 leading-tight tracking-tight">
+                            <h2 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#755433] to-[#6b5136] mb-8 leading-tight tracking-tight">
                                 The Spirit of Ta'awun
                             </h2>
                         </div>

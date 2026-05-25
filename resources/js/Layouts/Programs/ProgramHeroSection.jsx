@@ -4,7 +4,7 @@ import { BookOpenText, Check, Heart } from "lucide-react";
 
 export function ProgramHeroSection() {
     return (
-        <section className="relative min-h-[85vh] overflow-hidden">
+        <section className="relative lg:min-h-[85vh] h-[450px] overflow-hidden">
             {/* Left Side - Content */}
             <div className="absolute inset-0 lg:w-1/2 bg-gradient-to-br from-black via-[#1a1410] to-[#2a1f15] z-10">
                 <div className="h-full flex items-center px-6 sm:px-12 lg:px-16">
@@ -30,7 +30,19 @@ export function ProgramHeroSection() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.3 }}
-                            className="text-5xl lg:text-7xl font-bold mb-6 leading-tight"
+                            className="lg:hidden text-3xl flex flex-wrap gap-2 lg:text-7xl font-bold mb-6 leading-tight"
+                        >
+                            <span className="text-white">Building</span>
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ac6c29] via-[#d4a574] to-[#ac6c29]">
+                                Sustainable
+                            </span>
+                            <span className="text-white">Communities</span>
+                        </motion.h1>
+                        <motion.h1
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.3 }}
+                            className="hidden lg:block text-3xl lg:text-7xl font-bold mb-6 leading-tight"
                         >
                             <span className="text-white">Building</span>
                             <br />
@@ -56,12 +68,12 @@ export function ProgramHeroSection() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.5 }}
-                            className="flex flex-wrap gap-4"
+                            className="flex lg:flex-wrap flex-row gap-4"
                         >
-                            <button className="px-8 py-4 rounded-lg bg-gradient-to-r from-[#ac6c29] to-[#8b5723] text-white font-medium hover:shadow-2xl hover:shadow-[#ac6c29]/40 transition-all hover:scale-105">
+                            <button className="lg:px-8 lg:py-4 px-4 py-2 rounded-lg bg-gradient-to-r from-[#ac6c29] to-[#8b5723] text-white font-medium hover:shadow-2xl hover:shadow-[#ac6c29]/40 transition-all hover:scale-105">
                                 Support Our Programs
                             </button>
-                            <button className="px-8 py-4 rounded-lg border-2 border-[#ac6c29] text-white font-medium hover:bg-[#ac6c29]/10 transition-all">
+                            <button className="lg:px-8 lg:py-4 px-4 py-2 rounded-lg border-2 border-[#ac6c29] text-white font-medium hover:bg-[#ac6c29]/10 transition-all">
                                 Learn More
                             </button>
                         </motion.div>
