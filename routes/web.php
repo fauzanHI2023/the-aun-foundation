@@ -11,9 +11,12 @@ use Inertia\Inertia;
 use App\Models\Berita;
 use App\Models\Program;
 use App\Models\ContactMessage;
+use App\Models\Campaign;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CampaignController;
 use App\Http\Controllers\CheckoutController;
+use Carbon\Carbon;
+use App\Services\ClaudeService;
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -141,6 +144,31 @@ Route::post('/api/contact', function (Request $request) {
     ]);
 });
 
+Route::get('/api/campaigns', function () {
+    return Campaign::where('is_active', true)
+        ->get()
+        ->map(function ($item) {
+            $startDate = Carbon::parse($item->start_date);
+            $endDate = Carbon::parse($item->end_date);
+            return [
+                'id' => $item->id,
+                'title' => $item->title,
+                'slug' => $item->slug,
+                'excerpt' => $item->short_description,
+                'desc' => $item->description,
+                'image' => Storage::url($item->thumbnail),
+                'target' => $item->target_amount,
+                'collected' => $item->collected_amount,
+                'startdate' => $item->start_date?->format('d M Y'),
+                'enddate' => $item->end_date?->format('d M Y'),
+                'daysLeft' => now()->startOfDay()->diffInDays(
+                    Carbon::parse($item->end_date),
+                    false
+                ),
+            ];
+        });
+});
+
 
 Route::get('/search-data', function () {
     return response()->json([
@@ -196,5 +224,13 @@ Route::post('/midtrans/callback', [
     CheckoutController::class,
     'callback'
 ]);
+
+Route::get('/test-ai', function (
+    ClaudeService $claude
+) {
+    return $claude->ask(
+        'Halo Claude, siapa kamu?'
+    );
+});
 
 require __DIR__.'/auth.php';

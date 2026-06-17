@@ -28,15 +28,20 @@ export function Header() {
     const navItems = [
         { name: "About Us", href: "/aboutus" },
         { name: "Program", href: "/programs" },
+        { name: "Ways To Help", href: "/campaigns" },
         { name: "News", href: "/news" },
         { name: "Contact Us", href: "/contact" },
+        {
+            name: "Program Qurban",
+            href: "https://qurban.theaunfoundation.org/",
+        },
     ];
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const res = await axios.get(
-                    "http://127.0.0.1:8001/search-data"
+                    "http://127.0.0.1:8000/search-data"
                 );
 
                 setNewsData(res.data.news);
@@ -285,8 +290,8 @@ export function Header() {
                                 {/* Search Input with Gradient Border */}
                                 <div className="relative">
                                     <div className="absolute inset-0 bg-gradient-to-r from-[#ef1968]/20 via-[#f7c498]/20 to-[#ef1968]/20 blur-xl opacity-50" />
-                                    <div className="relative bg-[#ffffff] p-6 md:p-8">
-                                        <div className="flex items-center gap-4">
+                                    <div className="relative bg-[#ffffff] lg:p-6 p-4 md:p-8">
+                                        <div className="flex items-center lg:gap-4 gap-2">
                                             <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#6a4d30] to-[#976e45] flex items-center justify-center flex-shrink-0">
                                                 <Search
                                                     className="text-white"
@@ -303,7 +308,7 @@ export function Header() {
                                                     )
                                                 }
                                                 autoFocus
-                                                className="bg-white border-none flex-1 text-xl outline-none text-gray-900 placeholder:text-gray-400"
+                                                className="bg-white border-none flex-1 lg:w-auto w-[50%] text-xl outline-none text-gray-900 placeholder:text-gray-400"
                                             />
                                             <button
                                                 onClick={() =>
@@ -466,15 +471,15 @@ export function Header() {
                                                                         className="group block"
                                                                     >
                                                                         <div
-                                                                            className="p-5 bg-[#63411f] hover:bg-gradient-to-br hover:from-[#614426] hover:to-[#855b30] transition-all hover:shadow-lg"
+                                                                            className="lg:p-5 p-3 bg-[#63411f] hover:bg-gradient-to-br hover:from-[#614426] hover:to-[#855b30] transition-all hover:shadow-lg"
                                                                             style={{
                                                                                 borderRadius:
                                                                                     "20px 20px 20px 5px",
                                                                             }}
                                                                         >
-                                                                            <div className="flex gap-5">
+                                                                            <div className="flex lg:gap-5 gap-2">
                                                                                 <div
-                                                                                    className="flex-shrink-0 w-24 h-24 md:w-28 md:h-28 overflow-hidden"
+                                                                                    className="flex-shrink-0 lg:w-24 lg:h-24 w-20 h-20 md:w-28 md:h-28 overflow-hidden"
                                                                                     style={{
                                                                                         borderRadius:
                                                                                             "16px 16px 16px 4px",
@@ -491,7 +496,7 @@ export function Header() {
                                                                                 <div className="flex-1 min-w-0">
                                                                                     <div className="flex items-center gap-2 mb-3">
                                                                                         <span
-                                                                                            className="px-3 py-1 text-xs font-bold text-white"
+                                                                                            className="lg:px-3 px-0 py-1 text-xs font-bold text-white"
                                                                                             style={{
                                                                                                 backgroundColor:
                                                                                                     article.categoryColor,
@@ -509,7 +514,7 @@ export function Header() {
                                                                                             article.judul
                                                                                         }
                                                                                     </h4>
-                                                                                    <p className="text-sm text-white line-clamp-2 mb-3 leading-relaxed">
+                                                                                    <p className="lg:block hidden text-sm text-white line-clamp-2 mb-3 leading-relaxed">
                                                                                         {
                                                                                             article.konten
                                                                                         }

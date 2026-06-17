@@ -19,15 +19,6 @@ export function News() {
         (item) => item.home_post === 0 && item.featured_post === 0
     );
 
-    // const featuredNews = {
-    //     title: "Launch of the RISE Program: Bringing Inclusive Education to 50 Villages",
-    //     excerpt:
-    //         "Rembulan Relief Nusantara has launched the RISE program, which will reach 50 villages across Indonesia with a focus on inclusive education for women and children.",
-    //     date: "15 Februari 2026",
-    //     category: "Launch Program",
-    //     image: "/images/DSC09927.jpg",
-    // };
-
     const recentNews = [
         {
             title: "Workshop on Women's Economic Empowerment in East Java",

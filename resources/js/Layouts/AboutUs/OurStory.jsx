@@ -35,9 +35,9 @@ export function OurStory() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="lg:col-span-7 space-y-8 text-xl text-black/70 leading-relaxed"
+                        className="lg:col-span-7 space-y-8 text-lg text-black/70 leading-relaxed"
                     >
-                        <p className="text-2xl text-black leading-relaxed">
+                        <p className="text-lg text-black leading-relaxed">
                             <span className="text-[#754c24] font-semibold">
                                 AUN (Asa Untuk Negeri)
                             </span>{" "}

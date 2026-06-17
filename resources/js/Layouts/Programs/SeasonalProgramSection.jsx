@@ -53,7 +53,7 @@ export function SeasonalProgramSection() {
                                     </span>
                                 </div>
 
-                                <h3 className="text-3xl md:text-4xl mb-6 text-foreground">
+                                <h3 className="text-3xl md:text-4xl font-semibold mb-6 text-foreground">
                                     Ramadan
                                     <br />
                                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8b5723] to-[#ac6c29]">
@@ -90,6 +90,17 @@ export function SeasonalProgramSection() {
                                     ))}
                                 </div>
                             </div>
+                            <div className="mt-8 bg-gradient-to-br from-[#8b5723]/5 via-[#8b5723]/5 to-[#8b5723]/5 text-[#8b5723] rounded-2xl p-6 flex flex-col gap-2">
+                                <p className="font-bold text-lg text-[#8b5723]">
+                                    مَنْ فَطَّرَ صَائِمًا كَانَ لَهُ مِثْلُ
+                                    أَجْرِهِ
+                                </p>
+                                <p className="italic font-normal text-xs text-black">
+                                    "Whoever provides food for a fasting person
+                                    to break his fast, will have a reward like
+                                    theirs..” (Hadith At Tirmidzi)
+                                </p>
+                            </div>
                         </div>
 
                         <div className="lg:col-span-7 relative h-[300px] sm:h-[380px] md:h-[450px] lg:h-[500px] lg:mt-0 mt-[3rem]">
@@ -121,7 +132,7 @@ export function SeasonalProgramSection() {
                                     <img
                                         src="https://images.unsplash.com/photo-1640222495180-60a907961fa2?w=800"
                                         alt="Ramadan iftar"
-                                        className="relative w-full h-full object-cover rounded-[2.5rem] ring-4 ring-[#ffffff] group-hover:scale-105 transition-transform duration-700"
+                                        className="relative w-full h-full object-cover rounded-[2.5rem] group-hover:scale-105 transition-transform duration-700"
                                     />
                                 </div>
 
@@ -130,7 +141,7 @@ export function SeasonalProgramSection() {
                                     <img
                                         src="https://images.unsplash.com/photo-1776855828554-dfbeed18ffa2?w=600"
                                         alt="Community sharing"
-                                        className="relative w-full h-full object-cover rounded-[2rem] ring-4 ring-[#ffffff] group-hover:scale-105 transition-transform duration-700"
+                                        className="relative w-full h-full object-cover rounded-[2rem] ring-8 ring-[#ffffff] group-hover:scale-105 transition-transform duration-700"
                                     />
                                 </div>
                             </div>
@@ -201,7 +212,7 @@ export function SeasonalProgramSection() {
                                     <img
                                         src="https://images.unsplash.com/photo-1502781252888-9143ba7f074e?w=600"
                                         alt="Community support"
-                                        className="relative w-full h-full object-cover rounded-[2rem] ring-4 ring-white group-hover:scale-105 transition-transform duration-700"
+                                        className="relative w-full h-full object-cover rounded-[2rem] ring-8 ring-white group-hover:scale-105 transition-transform duration-700"
                                     />
                                 </div>
                             </div>
@@ -223,7 +234,7 @@ export function SeasonalProgramSection() {
                                 <h3 className="text-3xl md:text-4xl mb-6 text-foreground">
                                     Qurban
                                     <br />
-                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-[#ac6c29]">
+                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8b5723] to-[#ac6c29]">
                                         Programs
                                     </span>
                                 </h3>
@@ -255,6 +266,18 @@ export function SeasonalProgramSection() {
                                         </div>
                                     ))}
                                 </div>
+                            </div>
+                            <div className="mt-8 bg-gradient-to-br from-[#8b5723]/5 via-[#8b5723]/5 to-[#8b5723]/5 text-[#8b5723] rounded-2xl p-6 flex flex-col gap-2">
+                                <p className="font-bold text-lg text-[#8b5723]">
+                                    لَنْ يَنَالَ اللَّهَ لُحُومُهَا وَلَا
+                                    دِمَاؤُهَا وَلَٰكِنْ يَنَالُهُ التَّقْوَىٰ
+                                    مِنْكُمْ
+                                </p>
+                                <p className="italic font-normal text-xs text-black">
+                                    “Neither their meat nor blood reaches Allah.
+                                    Rather, it is your piety that reaches Him..”
+                                    (Al Hajj:37)
+                                </p>
                             </div>
                         </div>
                     </div>

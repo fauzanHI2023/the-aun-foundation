@@ -36,7 +36,7 @@ export function NewsHeroSection() {
 
     const featuredNews = newsFeatureds.find((item) => item.featured_post === 1);
     return (
-        <section className="relative md:mt-0 mt-[100px] md:h-screen h-[900px] overflow-hidden">
+        <section className="relative md:mt-0 mt-[100px] md:h-screen h-[800px] overflow-hidden">
             <div className="absolute inset-0">
                 <img
                     src={`${featuredNews?.image}`}
@@ -69,10 +69,10 @@ export function NewsHeroSection() {
                                 </div>
                             </div>
 
-                            <h1 className="text-3xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                            <h1 className="text-2xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                                 {featuredNews?.title}
                             </h1>
-                            <p className="text-xl text-white/90 mb-8 max-w-2xl leading-relaxed">
+                            <p className="lg:text-lg text-base text-white/90 mb-8 max-w-2xl leading-relaxed">
                                 {featuredNews?.excerpt}
                             </p>
                             <a

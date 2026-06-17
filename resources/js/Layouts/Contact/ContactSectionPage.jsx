@@ -28,7 +28,7 @@ export function ContactSectionPage() {
         {
             icon: Phone,
             title: "Call Us",
-            details: ["+62 XXX XXXX XXXX", "+62 XXX XXXX XXXX"],
+            details: ["+62 815-4694-0974"],
             color: "from-[#8b5723] to-[#6d4520]",
         },
         {

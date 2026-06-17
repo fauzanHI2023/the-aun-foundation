@@ -60,10 +60,10 @@ export function ContactSection() {
                     </p>
                 </div>
 
-                <div className="grid lg:grid-cols-12 gap-12">
+                <div className="flex flex-col lg:grid lg:grid-cols-12 gap-12">
                     {/* Contact Information */}
-                    <div className="lg:col-span-5 space-y-6">
-                        <div className="bg-white p-8 rounded-[2.5rem]">
+                    <div className="flex flex-col lg:col-span-5 space-y-6">
+                        <div className="bg-white lg:p-8 p-0 rounded-[2.5rem]">
                             <h3 className="text-2xl font-bold text-gray-900 mb-4">
                                 Contact Information
                             </h3>
@@ -220,7 +220,7 @@ export function ContactSection() {
                                         })
                                     }
                                     className="w-full px-5 py-4 rounded-2xl border-1 border-gray-600 focus:border-[#754c24] focus:outline-none transition-colors bg-gray-700 focus:bg-white"
-                                    placeholder="+62 XXX XXXX XXXX"
+                                    placeholder="Collaborate My business"
                                 />
                             </div>
 

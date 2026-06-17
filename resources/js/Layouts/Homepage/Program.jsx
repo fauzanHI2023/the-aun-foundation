@@ -55,16 +55,24 @@ export function Programs() {
                 >
                     <div className="flex items-center justify-between">
                         <div>
-                            <div className="inline-block mb-6 px-4 py-1.5 bg-black text-white text-xs tracking-wider">
-                                EXPLORE PROGRAMS
-                            </div>
-                            <h2 className="text-3xl lg:text-6xl font-bold text-black mb-4 leading-tight tracking-tight">
-                                Creating Sustainable Impact
+                            <h2 className="text-4xl md:text-5xl mb-4 text-foreground font-semibold">
+                                Explore{" "}
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8B6835] to-[#D4A574]">
+                                    Programs
+                                </span>
                             </h2>
+                            <p className="text-foreground/60 max-w-2xl mx-auto">
+                                Creating Sustainable Impact
+                            </p>
                         </div>
-                        <button className="hidden lg:flex items-center gap-2 px-6 py-3 border border-black hover:bg-black hover:text-white transition-colors">
-                            <span className="text-sm">View All</span>
-                            <ArrowUpRight className="w-4 h-4" />
+                        <button className="hidden lg:flex items-center rounded-lg gap-2 px-6 border border-[#8B6835] text-[#8B6835] py-3 hover:bg-[#8B6835] hover:text-white transition-colors">
+                            <a
+                                href="/programs"
+                                className=" flex gap-2 lg:flex items-center hover:bg-[#8B6835]"
+                            >
+                                <span className="text-sm">View All</span>
+                                <ArrowUpRight className="w-4 h-4" />
+                            </a>
                         </button>
                     </div>
                 </motion.div>

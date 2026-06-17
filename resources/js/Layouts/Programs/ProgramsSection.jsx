@@ -47,6 +47,15 @@ export function ProgramsBanner() {
                                 strengthening public facilities that support
                                 social, spiritual, and community well-being.
                             </p>
+                            <div className="bg-gradient-to-br from-[#8b5723]/80 via-[#8b5723]/60 to-[#8b5723]/90 text-white rounded-2xl p-6 flex flex-col gap-2">
+                                <p className="font-bold text-xl">
+                                    خَيْرُ الصَّدَقَةِ سَقْيُ الْمَاءِ
+                                </p>
+                                <p className="italic font-normal text-xs">
+                                    "The best charity is providing drinking
+                                    water." (Hadith Abu Daud - An Nasa’i)
+                                </p>
+                            </div>
                             <div className="h-px w-full bg-gradient-to-r from-primary/30 to-transparent" />
                         </div>
 
@@ -130,6 +139,17 @@ export function ProgramsBanner() {
                                 This pillar aims to expand access to education
                                 and knowledge, particularly for young people.
                             </p>
+                            <div className="bg-gradient-to-br from-[#8b5723]/80 via-[#8b5723]/60 to-[#8b5723]/90 text-white rounded-2xl p-6 flex flex-col gap-2">
+                                <p className="font-bold text-xl">
+                                    وَيَسْأَلُونَكَ عَنِ الْيَتَامَىٰ ۖ قُلْ
+                                    إِصْلَاحٌ لَّهُمْ خَيْرٌ
+                                </p>
+                                <p className="italic font-normal text-xs">
+                                    "...And they ask you, [O Muhammad], about
+                                    orphans. Say, 'Improvement for them is best.
+                                    (Al Baqara: 220)
+                                </p>
+                            </div>
                             <div className="h-px w-full bg-gradient-to-r from-[#8b5723]/30 to-transparent" />
                         </div>
 
@@ -220,6 +240,17 @@ export function ProgramsBanner() {
                                 economic independence through various
                                 empowerment initiatives.
                             </p>
+                            <div className="bg-gradient-to-br from-[#8b5723]/80 via-[#8b5723]/60 to-[#8b5723]/90 text-white rounded-2xl p-6 flex flex-col gap-2">
+                                <p className="font-bold text-xl">
+                                    مَا أَكَلَ أَحَدٌ طَعَامًا قَطُّ خَيْرًا
+                                    مِنْ أَنْ يَأْكُلَ مِنْ عَمَلِ يَدِهِ
+                                </p>
+                                <p className="italic font-normal text-xs">
+                                    "No one has ever eaten a better meal than
+                                    what he earns through the work of his own
+                                    hands."
+                                </p>
+                            </div>
                             <div className="h-px w-full bg-gradient-to-r from-[#8b5723]/30 to-transparent" />
                         </div>
 

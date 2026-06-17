@@ -11,11 +11,11 @@ export function AboutSection() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <div className="inline-block mb-6 px-4 py-1.5 bg-[#754c24] text-white text-xs tracking-wider">
-                            Story US
-                        </div>
-                        <h2 className="text-3xl lg:text-6xl font-bold text-black mb-8 leading-tight tracking-tight">
-                            Asa Untuk Negeri
+                        <h2 className="text-4xl md:text-5xl mb-4 text-foreground font-semibold">
+                            Story{" "}
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8B6835] to-[#D4A574]">
+                                Us
+                            </span>
                         </h2>
                         <div className="space-y-6 text-lg text-black/70 leading-relaxed">
                             <p>

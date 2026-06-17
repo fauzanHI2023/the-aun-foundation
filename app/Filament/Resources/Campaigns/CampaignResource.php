@@ -18,7 +18,7 @@ class CampaignResource extends Resource
 {
     protected static ?string $model = Campaign::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::ChartBar;
 
     protected static ?string $recordTitleAttribute = 'campaigns';
 
@@ -45,6 +45,7 @@ class CampaignResource extends Resource
             'index' => ListCampaigns::route('/'),
             'create' => CreateCampaign::route('/create'),
             'edit' => EditCampaign::route('/{record}/edit'),
+            'ai-insights' => Pages\AiInsights::route('/{record}/ai-insights'),
         ];
     }
 }

@@ -155,6 +155,12 @@ class CheckoutController extends Controller
                 'snap_token' => $snapToken,
             ]);
 
+            $options = [
+                'headers' => [
+                    'X-Override-Notification' => 'https://domainanda.com/api/midtrans/callback'
+                ]
+            ];
+
             DB::commit();
 
             /*

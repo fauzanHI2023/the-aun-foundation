@@ -137,7 +137,9 @@ export function Footer() {
                                     <Mail className="w-5 h-5 text-amber-400 group-hover:text-white" />
                                 </div>
                                 <span className="text-gray-300 text-sm mt-2">
-                                    contact@theaunfoundation.org
+                                    <a href="mailto:contact@theaunfoundation.org">
+                                        contact@theaunfoundation.org
+                                    </a>
                                 </span>
                             </li>
                             <li className="flex items-start gap-3 group">
@@ -145,7 +147,12 @@ export function Footer() {
                                     <Phone className="w-5 h-5 text-amber-400 group-hover:text-white" />
                                 </div>
                                 <span className="text-gray-300 text-sm mt-2">
-                                    +62 XXX XXXX XXXX
+                                    <a
+                                        href="https://wa.me/6281546940974"
+                                        target="_blank"
+                                    >
+                                        +62 815-4694-0974
+                                    </a>
                                 </span>
                             </li>
                             <li className="flex items-start gap-3 group">
@@ -153,8 +160,10 @@ export function Footer() {
                                     <MapPin className="w-5 h-5 text-amber-400 group-hover:text-white" />
                                 </div>
                                 <span className="text-gray-300 text-sm mt-2">
-                                    Registered Office : Mayapada Tower 1, 11st
-                                    Floor, Kuningan South Jakarta
+                                    <a href="https://maps.app.goo.gl/mJoqTudEkQATvSuZ8">
+                                        Registered Office : Mayapada Tower 1,
+                                        11st Floor, Kuningan South Jakarta
+                                    </a>
                                 </span>
                             </li>
                             <li className="flex items-start gap-3 group">
@@ -162,8 +171,10 @@ export function Footer() {
                                     <MapPin className="w-5 h-5 text-amber-500 group-hover:text-white" />
                                 </div>
                                 <span className="text-gray-300 text-sm mt-2">
-                                    Operational Office : GKM Green Tower, 20th
-                                    Floor, TB Simatupang South Jakarta
+                                    <a href="https://maps.app.goo.gl/rEo96EYHPJPJmU2RA">
+                                        Operational Office : GKM Green Tower,
+                                        20th Floor, TB Simatupang South Jakarta
+                                    </a>
                                 </span>
                             </li>
                         </ul>

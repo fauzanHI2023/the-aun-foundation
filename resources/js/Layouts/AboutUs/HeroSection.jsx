@@ -35,10 +35,12 @@ export function HeroSection() {
                     className="mb-8"
                 >
                     <div className="text-2xl md:text-3xl font-arabic leading-relaxed mb-4">
-                        وَتَعَاوَنُوا عَلَى الْبِرِّ وَالتَّقْوٰى
+                        وَتَعَاوَنُوا عَلَى الْبِرِّ وَالتَّقْوَىٰ ۖ وَلَا
+                        تَعَاوَنُوا عَلَى الْإِثْمِ وَالْعُدْوَانِ
                     </div>
                     <p className="text-lg md:text-xl italic text-white/90">
-                        "And cooperate in righteousness and piety"
+                        “And cooperate in righteousness and piety, but do not
+                        cooperate in sin and aggression.” (QS. Al Ma’idah:2)
                     </p>
                 </motion.div>
 
