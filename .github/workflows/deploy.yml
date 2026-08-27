@@ -58,6 +58,7 @@ jobs:
 
       - name: Package release into a single archive
         run: |
+          set +e
           tar czf release.tar.gz \
             --exclude='.git' \
             --exclude='.github' \
@@ -71,6 +72,15 @@ jobs:
             --exclude='public/storage' \
             --exclude='release.tar.gz' \
             .
+          TAR_EXIT=$?
+          set -e
+          # exit code 1 dari tar cuma warning (misal file changed while reading), aman dilanjut
+          # exit code 2+ berarti error fatal beneran
+          if [ $TAR_EXIT -gt 1 ]; then
+            echo "tar gagal dengan error fatal, exit code: $TAR_EXIT"
+            exit $TAR_EXIT
+          fi
+          echo "Archive berhasil dibuat (tar exit code: $TAR_EXIT)"
 
       - name: Upload archive via SCP (single file, fast)
         run: |
