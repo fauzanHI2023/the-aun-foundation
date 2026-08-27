@@ -4,13 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Transaction;
 use App\Models\TransactionItem;
-use App\Services\MidtransService;
+use App\Services\DuitkuService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Inertia\Inertia;
-use Midtrans\Notification;
-use Midtrans\Snap;
 
 class CheckoutController extends Controller
 {
@@ -62,7 +60,7 @@ class CheckoutController extends Controller
 
         try {
 
-            MidtransService::init();
+            // MidtransService::init();
 
             $grandTotal = collect($cart)
                 ->sum('subtotal');
@@ -86,80 +84,30 @@ class CheckoutController extends Controller
 
             ]);
 
-            $midtransItems = [];
-
             foreach ($cart as $item) {
 
                 TransactionItem::create([
-
-                    'transaction_id' =>
-                        $transaction->id,
-
-                    'campaign_id' =>
-                        $item['campaign_id'],
-
-                    'campaign_title' =>
-                        $item['title'],
-
-                    'amount' =>
-                        $item['amount'],
-
+                    'transaction_id' => $transaction->id,
+                    'campaign_id' => $item['campaign_id'],
+                    'campaign_title' => $item['title'],
+                    'amount' => $item['amount'],
                     'quantity' => 1,
-
-                    'subtotal' =>
-                        $item['subtotal'],
+                    'subtotal' => $item['subtotal'],
                 ]);
-
-                $midtransItems[] = [
-
-                    'id' => $item['campaign_id'],
-
-                    'price' => $item['amount'],
-
-                    'quantity' => 1,
-
-                    'name' => $item['title'],
-                ];
             }
 
-            $params = [
+            $response = DuitkuService::createInvoice(
+                $transaction->invoice_number,
+                $grandTotal,
+                $request->name,
+                $request->email
+            );
 
-                'transaction_details' => [
-
-                    'order_id' =>
-                        $transaction->invoice_number,
-
-                    'gross_amount' =>
-                        $grandTotal,
-                ],
-
-                'item_details' => $midtransItems,
-
-                'customer_details' => [
-
-                    'first_name' =>
-                        $request->name,
-
-                    'email' =>
-                        $request->email,
-
-                    'phone' =>
-                        $request->phone,
-                ],
-            ];
-
-            $snapToken =
-                Snap::getSnapToken($params);
-
+            // dd($response);
             $transaction->update([
-                'snap_token' => $snapToken,
+                'payment_reference' => $response['json']['reference'] ?? null,
+                'payment_response' => json_encode($response['json']),
             ]);
-
-            $options = [
-                'headers' => [
-                    'X-Override-Notification' => 'https://domainanda.com/api/midtrans/callback'
-                ]
-            ];
 
             DB::commit();
 
@@ -169,7 +117,7 @@ class CheckoutController extends Controller
             session()->forget('cart');
 
             return response()->json([
-                'snap_token' => $snapToken,
+                'payment_url' => $response['json']['paymentUrl'],
             ]);
 
         } catch (\Throwable $th) {

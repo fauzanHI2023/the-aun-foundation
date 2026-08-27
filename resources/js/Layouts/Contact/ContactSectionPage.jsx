@@ -98,9 +98,9 @@ export function ContactSectionPage() {
     return (
         <div className="min-h-screen bg-white">
             {/* Hero Section - Split Design */}
-            <section className="relative lg:h-[900px] h-full overflow-hidden">
+            <section className="relative lg:h-[900px] h-full overflow-hidden bg-gradient-to-br from-black via-[#3e2f25] to-[#5f4730]">
                 {/* Left Side - Dark */}
-                <div className="lg:absolute relative inset-0 lg:w-1/2 bg-gradient-to-br from-black via-[#1a1410] to-[#2a1f15]">
+                <div className="lg:absolute relative inset-0 lg:w-1/2">
                     <div className="h-full flex items-center justify-center p-8 lg:p-16">
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
@@ -110,7 +110,7 @@ export function ContactSectionPage() {
                         >
                             <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
                                 <span className="text-white">Get in</span>
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ac6c29] via-[#d4a574] to-[#ac6c29]">
+                                <span className="text-transparent bg-clip-text bg-[#ac6c29]">
                                     Touch
                                 </span>
                             </h1>
@@ -186,7 +186,7 @@ export function ContactSectionPage() {
                 </div>
 
                 {/* Right Side - Form */}
-                <div className="lg:absolute relative inset-0 lg:left-1/2 lg:h-[900px] h-full bg-white">
+                <div className="lg:absolute relative inset-0 lg:left-1/2 lg:h-[900px] h-full">
                     <div className="h-full flex items-center justify-center p-8 lg:p-16">
                         <motion.div
                             initial={{ opacity: 0, x: 50 }}
@@ -328,7 +328,7 @@ export function ContactSectionPage() {
             </section>
 
             {/* Office Locations */}
-            <section className="lg:py-24 py-8 bg-gradient-to-b from-gray-50 to-white">
+            <section className="lg:py-24 py-8">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -486,42 +486,6 @@ export function ContactSectionPage() {
                             </motion.div>
                         ))}
                     </div>
-                </div>
-            </section>
-
-            {/* CTA Section */}
-            <section className="relative lg:py-32 py-8 overflow-hidden">
-                <div className="absolute inset-0">
-                    <img
-                        src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920"
-                        alt="Contact CTA"
-                        className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#ac6c29]/95 to-[#8b5723]/95" />
-                </div>
-
-                <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                    >
-                        <h2 className="text-3xl md:text-6xl font-bold mb-6 text-white">
-                            Ready to Make a Difference?
-                        </h2>
-                        <p className="md:text-2xl text-lg mb-12 text-white/90">
-                            Join us in creating lasting impact in communities
-                            across the nation
-                        </p>
-                        <div className="flex flex-row sm:flex-row gap-6 justify-center">
-                            <button className="lg:px-12 lg:py-5 px-4 py-2 rounded-xl bg-white text-[#ac6c29] text-base font-medium hover:bg-gray-100 transition-all hover:scale-105 shadow-2xl">
-                                Donate Now
-                            </button>
-                            <button className="lg:px-12 lg:py-5 px-4 py-2 rounded-xl border-2 border-white text-white text-base font-medium hover:bg-white/10 transition-all">
-                                Collaborate
-                            </button>
-                        </div>
-                    </motion.div>
                 </div>
             </section>
         </div>

@@ -17,6 +17,7 @@ use Filament\Tables\Table;
 use Filament\Forms;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\RichEditor;
 use Filament\Actions\Action;
 
 class ProgramResource extends Resource
@@ -36,18 +37,34 @@ class ProgramResource extends Resource
 
             Forms\Components\TextInput::make('focus')
                 ->required(),
-            
-            Forms\Components\TextInput::make('description')
+
+            Forms\Components\FileUpload::make('thumbnail')
+                ->image()
+                ->disk('public')
+                ->directory('images/program')
+                ->visibility('public')
+                ->maxSize(10240)
+                ->columnSpanFull()
                 ->required(),
             
-            Forms\Components\TextInput::make('target_groups')
+            Forms\Components\RichEditor::make('description')
+                ->required()
+                ->columnSpanFull(),
+            
+            Forms\Components\TextInput::make('goals')
                 ->required(),
 
-            Forms\Components\TextInput::make('key_components')
-                ->required(),
+            Forms\Components\TextInput::make('collected'),
 
-            Forms\Components\TextInput::make('outcome')
-                ->required(),
+            Forms\Components\Select::make('program_type')
+                ->options([
+                    'community_facilities' => 'Community Facilities',
+                    'education_knowledge' => 'Education & Knowledge',
+                    'economic_empowerment' => 'Economic Empowerment',
+                    'seasonal' => 'Seasonal Program',
+                ])
+                ->required()
+                ->native(false),
             
         ]);
     }

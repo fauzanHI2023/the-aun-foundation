@@ -1,0 +1,73 @@
+@import "/vendor/filament/filament/resources/css/theme.css";
+
+@config '../../../../tailwind.config.js';
+
+/* Tailwind v4 default-nya abaikan folder yang ada di .gitignore (termasuk vendor/).
+   Baris ini WAJIB supaya class Tailwind di blade Filament ikut ter-scan. */
+@source '../../../../vendor/filament/**/*.blade.php';
+@source '../../../../resources/views/**/*.blade.php';
+@source '../../../../app/Filament/**/*.php';
+
+/* ... sisanya (.fi-body, .fi-sidebar, dst.) tetap sama seperti sebelumnya */
+@layer base {
+    body,
+    button,
+    span,
+    p,
+    a {
+        font-family: "Poppins", sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Fraunces", serif;
+    }
+
+    &:where(.dark, .dark *) {
+        background-color: #1d1d1c;
+    }
+
+    .glass {
+        background-color: transparent !important;
+        background: rgba(255, 255, 255, 0.045) !important;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        border-top: 1px solid rgba(255, 255, 255, 0.16);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45),
+            0 2px 8px rgba(0, 0, 0, 0.25);
+        transition: box-shadow 0.25s ease, transform 0.25s ease,
+            backdrop-filter 0.25s ease;
+    }
+
+    .fi-body.fi-panel-admin.fi-body-has-navigation {
+        background-color: transparent !important;
+    }
+
+    .fi-main.fi-width-7xl {
+        background-image: radial-gradient(
+                680px 420px at 88% -6%,
+                rgba(255, 184, 117, 0.12),
+                transparent 65%
+            ),
+            radial-gradient(
+                560px 380px at 4% 18%,
+                rgba(201, 131, 43, 0.09),
+                transparent 60%
+            ),
+            radial-gradient(
+                700px 500px at 60% 100%,
+                rgba(92, 52, 0, 0.28),
+                transparent 65%
+            ) !important;
+        background: #141009;
+    }
+
+    .fi-sidebar-nav {
+        background: #141009 !important;
+    }
+}

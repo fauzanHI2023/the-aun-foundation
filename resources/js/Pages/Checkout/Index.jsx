@@ -14,7 +14,7 @@ export default function Index({ cart, grandTotal }) {
 
             const response = await axios.post("/checkout", data);
 
-            window.snap.pay(response.data.snap_token);
+            window.location.href = response.data.payment_url;
         } catch (error) {
             console.log(error);
         }

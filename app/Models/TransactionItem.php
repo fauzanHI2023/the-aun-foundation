@@ -30,4 +30,9 @@ class TransactionItem extends Model
     {
         return $this->belongsTo(Campaign::class);
     }
+
+    public function program()
+    {
+        return $this->belongsTo(Program::class);
+    }
 }

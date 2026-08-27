@@ -3,23 +3,20 @@ import { Heart, Target, Award, Users, Handshake } from "lucide-react";
 
 export function OurMission() {
     return (
-        <section className="lg:py-24 py-8 relative overflow-hidden">
+        <section className="lg:py-24 py-8 relative overflow-hidden bg-[#f6f3f2]">
             {/* Background Decoration */}
-            <div className="absolute inset-0 bg-gradient-to-b from-secondary/20 via-transparent to-secondary/20" />
+            {/* <div className="absolute inset-0 bg-gradient-to-b from-secondary/20 via-transparent to-secondary/20" />
             <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#8B6835]/5 rounded-full blur-3xl animate-pulse-slow" />
             <div
                 className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#D4A574]/5 rounded-full blur-3xl animate-pulse-slow"
                 style={{ animationDelay: "2s" }}
-            />
+            /> */}
 
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
                 <div className="text-center mb-20">
                     <h2 className="text-4xl md:text-5xl mb-4 text-foreground font-semibold">
-                        Our{" "}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8B6835] to-[#D4A574]">
-                            Direction
-                        </span>
+                        Our <span className="text-primary">Direction</span>
                     </h2>
                     <p className="text-foreground/60 max-w-2xl mx-auto">
                         Guided by a clear vision and driven by purposeful
@@ -84,7 +81,7 @@ export function OurMission() {
                                         Empowered &
                                     </span>
                                     <br />
-                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8B6835] via-accent to-[#8B6835]">
+                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#874e0a] via-accent to-[#8B6835]">
                                         Compassionate
                                     </span>
                                     <br />
@@ -107,9 +104,9 @@ export function OurMission() {
                                 </p>
 
                                 {/* Target Year Badge */}
-                                <div className="inline-flex items-center gap-4 px-6 py-4 bg-gradient-to-r from-secondary to-secondary/50 rounded-2xl border-l-4 border-[#8B6835]">
+                                <div className="inline-flex items-center gap-4 px-6 py-4 bg-white rounded-2xl border-l-4 border-[#8B6835]">
                                     <div className="flex items-center justify-center">
-                                        <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#8B6835] to-[#D4A574] flex items-center justify-center shadow-lg">
+                                        <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#874e0a] to-[#816139] flex items-center justify-center shadow-lg">
                                             <span className="text-white font-bold text-lg">
                                                 2030
                                             </span>
@@ -151,7 +148,7 @@ export function OurMission() {
                                 </div>
 
                                 <h3 className="text-4xl md:text-5xl mb-6 leading-tight">
-                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8B6835] via-[#D4A574] to-[#8B6835]">
+                                    <span className="text-[#874e0a]">
                                         Sustainable
                                     </span>
                                     <br />
@@ -186,7 +183,7 @@ export function OurMission() {
                                         >
                                             {/* Number with gradient line */}
                                             <div className="flex flex-col items-center gap-2">
-                                                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#8B6835] to-[#D4A574] flex items-center justify-center shadow-lg group-hover/item:scale-110 group-hover/item:rotate-6 transition-all">
+                                                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#874e0a] to-[#98754a] flex items-center justify-center shadow-lg group-hover/item:scale-110 group-hover/item:rotate-6 transition-all">
                                                     <span className="text-white font-bold">
                                                         {index + 1}
                                                     </span>

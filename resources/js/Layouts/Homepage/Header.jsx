@@ -18,6 +18,7 @@ export function Header() {
     const [programsData, setProgramsData] = useState([]);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
+    const [isScrolled, setIsScrolled] = useState(false);
     const { url } = usePage();
 
     const [searchResults, setSearchResults] = useState({
@@ -28,7 +29,6 @@ export function Header() {
     const navItems = [
         { name: "About Us", href: "/aboutus" },
         { name: "Program", href: "/programs" },
-        { name: "Ways To Help", href: "/campaigns" },
         { name: "News", href: "/news" },
         { name: "Contact Us", href: "/contact" },
         {
@@ -82,6 +82,19 @@ export function Header() {
         }
     }, [searchQuery, newsData, programsData]);
 
+    useEffect(() => {
+        const handleScroll = () => {
+            // ganti 50 sesuai jarak scroll yang kamu mau sebagai threshold
+            setIsScrolled(window.scrollY > 50);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        // cek posisi awal (misalnya kalau user refresh halaman saat sudah discroll)
+        handleScroll();
+
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     const totalResults =
         searchResults.news.length + searchResults.programs.length;
 
@@ -90,7 +103,11 @@ export function Header() {
             <motion.header
                 initial={{ y: -100 }}
                 animate={{ y: 0 }}
-                className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100"
+                className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+                    isScrolled
+                        ? "bg-white/70 backdrop-blur-lg border-b border-gray-100 shadow-sm"
+                        : "bg-white/10"
+                }`}
             >
                 <div className="container mx-auto px-4 md:px-6 py-4">
                     <div className="flex items-center justify-between">
@@ -144,14 +161,15 @@ export function Header() {
                             >
                                 <Search size={20} />
                             </motion.button>
-                            <motion.button
+                            <motion.a
+                                href="/campaigns"
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ delay: 0.5 }}
-                                className="bg-[#754c24] text-white px-6 py-2 hover:bg-[#7b542d] transition-colors rounded-sm"
+                                className="cta-glow text-white font-bold px-6 py-2 hover:bg-[#7b542d] transition-colors rounded-lg"
                             >
                                 Donasi
-                            </motion.button>
+                            </motion.a>
                         </nav>
 
                         {/* Mobile Actions */}

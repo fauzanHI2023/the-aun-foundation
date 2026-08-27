@@ -51,7 +51,7 @@ export function ContactSection() {
                     <p className="text-sm uppercase tracking-widest text-[#754c24] mb-6 font-medium">
                         Let's Connect
                     </p>
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#7c562c] via-[#d4a574] to-[#ac6c29] mb-6">
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6">
                         Get In Touch
                     </h2>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -78,42 +78,47 @@ export function ContactSection() {
                                     <div className="p-3 bg-[#846442] rounded-xl">
                                         <Mail className="w-6 h-6 text-white" />
                                     </div>
-                                    <div>
+                                    <a href="mailto:contact@theaunfoundation.org">
                                         <h4 className="font-medium text-gray-900 mb-1">
                                             Email
                                         </h4>
                                         <p className="text-gray-600 text-sm">
                                             contact@theaunfoundation.org
                                         </p>
-                                    </div>
+                                    </a>
                                 </div>
 
                                 <div className="group flex items-start gap-4 p-4 bg-[#432b12]/10 backdrop-blur-sm border border-[#432b12]/10 hover:bg-[#7b562e]/10 rounded-2xl hover:shadow-lg transition-all">
                                     <div className="p-3 bg-[#846442] rounded-xl">
                                         <Phone className="w-6 h-6 text-white" />
                                     </div>
-                                    <div>
+                                    <a
+                                        href="https://wa.me/6281546940974"
+                                        target="_blank"
+                                    >
                                         <h4 className="font-medium text-gray-900 mb-1">
                                             Phone
                                         </h4>
                                         <p className="text-gray-600 text-sm">
-                                            +62 XXX XXXX XXXX
+                                            +62 815-4694-0974
                                         </p>
-                                    </div>
+                                    </a>
                                 </div>
 
                                 <div className="group flex items-start gap-4 p-4 bg-[#432b12]/10 backdrop-blur-sm border border-[#432b12]/10 hover:bg-[#7b562e]/10 rounded-2xl hover:shadow-lg transition-all">
                                     <div className="p-3 bg-[#846442] rounded-xl">
                                         <MapPin className="w-6 h-6 text-white" />
                                     </div>
-                                    <div>
+                                    <a href="https://maps.app.goo.gl/mJoqTudEkQATvSuZ8">
                                         <h4 className="font-medium text-gray-900 mb-1">
                                             Address
                                         </h4>
                                         <p className="text-gray-600 text-sm">
-                                            Jakarta, Indonesia
+                                            Registered Office : Mayapada Tower
+                                            1, 11st Floor, Kuningan South
+                                            Jakarta
                                         </p>
-                                    </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>

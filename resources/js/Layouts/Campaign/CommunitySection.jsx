@@ -4,64 +4,6 @@ import useEmblaCarousel from "embla-carousel-react";
 import axios from "axios";
 import { Link } from "@inertiajs/react";
 
-const communityData = [
-    {
-        id: 101,
-        title: "Renovasi Balai Desa dan Ruang Belajar Terdampak Bencana",
-        cat: "Community",
-        image: "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=700&h=900&fit=crop&auto=format",
-        raised: 78000000,
-        goal: 120000000,
-        donors: 834,
-        daysLeft: 19,
-        org: "Yayasan Rumah Harapan",
-    },
-    {
-        id: 102,
-        title: "Dapur Umum untuk 500 Keluarga Pesisir yang Membutuhkan",
-        cat: "Community",
-        image: "https://images.unsplash.com/photo-1710092784814-4a6f158913b8?w=700&h=900&fit=crop&auto=format",
-        raised: 45000000,
-        goal: 80000000,
-        donors: 612,
-        daysLeft: 12,
-        org: "Komunitas Peduli Nusantara",
-    },
-    {
-        id: 103,
-        title: "Sumur Bersih untuk Desa Terpencil di Kalimantan Tengah",
-        cat: "Community",
-        image: "https://images.unsplash.com/photo-1776507178339-504c9f129d80?w=700&h=900&fit=crop&auto=format",
-        raised: 32000000,
-        goal: 55000000,
-        donors: 390,
-        daysLeft: 30,
-        org: "Air untuk Kehidupan",
-    },
-    {
-        id: 104,
-        title: "Pemulihan Nelayan Pasca Badai di Sulawesi Utara",
-        cat: "Community",
-        image: "https://images.unsplash.com/photo-1628717341663-0007b0ee2597?w=700&h=900&fit=crop&auto=format",
-        raised: 61000000,
-        goal: 100000000,
-        donors: 720,
-        daysLeft: 8,
-        org: "Laut Lestari Foundation",
-    },
-    {
-        id: 105,
-        title: "10 Rumah Layak Huni untuk Lansia Terlantar Jawa Tengah",
-        cat: "Community",
-        image: "https://images.unsplash.com/photo-1560220604-1985ebfe28b1?w=700&h=900&fit=crop&auto=format",
-        raised: 56000000,
-        goal: 90000000,
-        donors: 540,
-        daysLeft: 22,
-        org: "Rumah untuk Semua",
-    },
-];
-
 function useCarousel() {
     const [emblaRef, emblaApi] = useEmblaCarousel({
         align: "start",

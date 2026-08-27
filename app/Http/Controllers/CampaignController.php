@@ -9,15 +9,21 @@ use Illuminate\Http\Request;
 
 class CampaignController extends Controller
 {
-    public function index()
-    {
-        $campaigns = Campaign::query()
-            ->where('is_active', true)
-            ->latest()
-            ->paginate(12);
+    // public function index()
+    // {
+    //     $campaigns = Campaign::query()
+    //         ->where('is_active', true)
+    //         ->latest()
+    //         ->paginate(12);
 
+    //     return Inertia::render('Campaign/Index', [
+    //         'campaigns' => $campaigns,
+    //     ]);
+    // }
+    public function index(CampaignService $campaignService)
+    {
         return Inertia::render('Campaign/Index', [
-            'campaigns' => $campaigns,
+            'campaigns' => $campaignService->getActiveCampaigns(),
         ]);
     }
 
@@ -32,4 +38,5 @@ class CampaignController extends Controller
             'campaign' => $campaign,
         ]);
     }
+    
 }

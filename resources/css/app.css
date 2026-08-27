@@ -1,12 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../../tailwind.config.js";
 
 @layer base {
     body,
     button,
+    p,
     a {
-        font-family: "Poppins", sans-serif;
+        font-family: "Nunito", sans-serif;
     }
 
     h1,
@@ -14,7 +14,259 @@
     h3,
     h4,
     h5,
+    span,
+    input,
     h6 {
-        font-family: "Exo 2", serif;
+        font-family: "Fraunces", serif;
+    }
+
+    /* h1,
+    h1 > span {
+        font-family: "Cinzel", serif;
+    } */
+
+    .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .glass-card {
+        background: rgba(62, 39, 35, 0.15);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 32px 0 rgba(62, 39, 35, 0.1);
+    }
+
+    .glass-card-detail {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        box-shadow: 0 10px 40px rgba(172, 108, 41, 0.08);
+    }
+
+    .campaign-description img {
+        width: 100%;
+        height: auto;
+        border-radius: 1rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        margin: 1.5rem 0;
+    }
+
+    .donation-card-shadow {
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    @media (min-width: 768px) {
+        .md-w-13 {
+            width: 33.3333%;
+        }
+
+        .md-w-23 {
+            width: 66.6667%;
+        }
+    }
+
+    .fi-body:where(.dark, .dark *) {
+        background-color: #1c1b1b;
+    }
+
+    .fi-sidebar-nav:where(.dark, .dark *) {
+        border-right: #ac6c29;
+        border-right-style: solid;
+        border-right-width: thin;
+    }
+
+    .fi-logo:where(.dark, .dark *) {
+        height: 4rem !important;
+    }
+
+    .fi-sidebar:where(.dark, .dark *) {
+        background-color: #151414;
+    }
+
+    .cta-glow {
+        background: linear-gradient(
+            135deg,
+            #b9873f 0%,
+            #8b5e34 55%,
+            #6b4226 100%
+        );
+    }
+
+    .btn-cta-primary {
+        color: #fff;
+        box-shadow: 0px 4px 12px rgba(116, 77, 44, 0.25);
+        transition: all 0.2s ease;
+    }
+    .btn-cta-primary:hover {
+        background: #3e2816;
+        transform: translateY(-2px);
+        box-shadow: 0px 6px 18px rgba(116, 77, 44, 0.3);
+    }
+
+    .btn-cta-ghost {
+        border: 1.5px solid rgba(255, 255, 255, 0.5);
+        color: #fff;
+        transition: all 0.2s ease;
+    }
+    .btn-cta-ghost:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .cycle-item {
+        animation: cycleFade 16s infinite ease-in-out;
+    }
+
+    @keyframes cycleFade {
+        0% {
+            opacity: 0;
+            transform: scale(1.04);
+        }
+        6% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        28% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        36% {
+            opacity: 0;
+            transform: scale(1);
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    .sub-card {
+        transition: transform 0.3s ease;
+    }
+    .sub-card:hover {
+        transform: translateY(-4px);
+    }
+    .sub-card:hover .sub-img {
+        transform: scale(1.015);
+    }
+
+    .bg-mesh {
+        background: radial-gradient(
+                55% 48% at 82% 6%,
+                rgba(185, 135, 63, 0.28),
+                transparent 62%
+            ),
+            radial-gradient(
+                42% 42% at 6% 26%,
+                rgba(175, 155, 126, 0.2),
+                transparent 65%
+            ),
+            radial-gradient(
+                58% 58% at 40% 108%,
+                rgba(107, 66, 38, 0.13),
+                transparent 60%
+            ),
+            #fbf9f6;
+    }
+
+    /* Fine film-grain noise overlay */
+    .bg-grain {
+        opacity: 0.05;
+        mix-blend-mode: multiply;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* Frosted glass panel shared by all cards */
+    .glass-panel {
+        background: rgba(255, 255, 255, 0.58);
+        backdrop-filter: blur(22px) saturate(1.3);
+        -webkit-backdrop-filter: blur(22px) saturate(1.3);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85),
+            0 30px 60px -34px rgba(74, 50, 28, 0.35);
+    }
+
+    /* Animated "..." used while searching */
+    .dots-loading::after {
+        content: "";
+        animation: dotsLoading 1.2s steps(4) infinite;
+    }
+    @keyframes dotsLoading {
+        0% {
+            content: "";
+        }
+        25% {
+            content: ".";
+        }
+        50% {
+            content: "..";
+        }
+        75% {
+            content: "...";
+        }
+        100% {
+            content: "";
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        * {
+            animation-duration: 0.001ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.001ms !important;
+        }
+    }
+
+    .glass {
+        background: rgba(255, 255, 255, 0.045);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        border-top: 1px solid rgba(255, 255, 255, 0.16);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45),
+            0 2px 8px rgba(0, 0, 0, 0.25);
+        transition: box-shadow 0.25s ease, transform 0.25s ease,
+            backdrop-filter 0.25s ease;
+    }
+
+    .select-dashboard-donor select {
+        appearance: none;
+        background: transparent;
+        border: none;
+        color: inherit;
+        font: inherit;
+        font-weight: 600;
+        padding: 0px;
+        padding-right: 10px;
+        outline: none;
+    }
+
+    .select-dashboard-donor {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .bg-hero-radial {
+        background: radial-gradient(
+                200px 150px at var(--mx, 80%) var(--my, 0%),
+                rgba(255, 184, 117, 0.14),
+                transparent 62%
+            ),
+            rgba(255, 255, 255, 0.045);
+        border-radius: var(--radius-card);
+        padding: 24px 24px 22px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .bar-track {
+        height: 8px;
+        border-radius: 8px;
+        background: rgba(0, 0, 0, 0.4);
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+        position: relative;
+    }
+
+    .bar-fill {
+        height: 100%;
     }
 }

@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 
 export function OurStory() {
     return (
-        <section className="bg-white flex flex-col py-8 md:py-24">
-            <div className="text-center mb-20">
-                <h2 className="text-4xl md:text-5xl mb-4 text-foreground font-semibold">
+        <section className="bg-white flex flex-col py-8 md:py-18">
+            <div className="text-center md:mb-10 mb-8">
+                <h2 className="text-3xl md:text-4xl text-foreground font-bold">
                     Our{" "}
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8B6835] to-[#D4A574]">
+                    <span className="text-transparent bg-clip-text bg-primary">
                         Story
                     </span>
                 </h2>

@@ -4,33 +4,6 @@ import { Clock, ChevronRight, Users, GraduationCap } from "lucide-react";
 import axios from "axios";
 
 export function NewsEducationSection() {
-    const educationNews = [
-        {
-            title: "Youth Leadership Program Graduates 100 Leaders",
-            excerpt:
-                "First cohort completes comprehensive leadership development training.",
-            image: "https://images.unsplash.com/photo-1478476868527-002ae3f3e159?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200",
-            date: "April 20, 2026",
-            readTime: "6 min read",
-        },
-        {
-            title: "Digital Literacy Program Reaches 500 Students",
-            excerpt:
-                "New computer labs and internet access transform learning opportunities.",
-            image: "https://images.unsplash.com/photo-1630510590497-e69fac21bfbd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
-            date: "March 28, 2026",
-            readTime: "5 min read",
-        },
-        {
-            title: "Scholarship Program Supports 200 Children",
-            excerpt:
-                "Educational support enables students to continue their studies.",
-            image: "https://images.unsplash.com/photo-1556484687-30636164638b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
-            date: "March 10, 2026",
-            readTime: "4 min read",
-        },
-    ];
-
     const [newsArticles, setNewsArticles] = useState([]);
 
     useEffect(() => {

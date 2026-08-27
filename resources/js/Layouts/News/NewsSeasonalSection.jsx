@@ -4,41 +4,6 @@ import { Clock, ArrowRight, Sparkles } from "lucide-react";
 import axios from "axios";
 
 export function NewsSeasonalSection() {
-    const seasonalNews = [
-        {
-            title: "Ramadan Food Distribution Reaches 5,000 Families",
-            excerpt:
-                "Comprehensive Ramadan program brings iftar and food packages to communities.",
-            image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200",
-            date: "April 28, 2026",
-            readTime: "4 min read",
-        },
-        {
-            title: "Qurban Program Delivers to Remote Areas",
-            excerpt:
-                "Sacrificial meat distribution serves communities rarely reached by aid.",
-            image: "https://images.unsplash.com/photo-1630068846062-3ffe78aa5049?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
-            date: "March 25, 2026",
-            readTime: "4 min read",
-        },
-        {
-            title: "Eid Celebration Brings Joy to 1,000 Children",
-            excerpt:
-                "Special gifts and activities create memorable moments for young ones.",
-            image: "https://images.unsplash.com/photo-1478476868527-002ae3f3e159?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
-            date: "March 20, 2026",
-            readTime: "3 min read",
-        },
-        {
-            title: "Eid Celebration Brings Joy to 1,000 Children",
-            excerpt:
-                "Special gifts and activities create memorable moments for young ones.",
-            image: "https://images.unsplash.com/photo-1478476868527-002ae3f3e159?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
-            date: "March 20, 2026",
-            readTime: "3 min read",
-        },
-    ];
-
     const [newsArticles, setNewsArticles] = useState([]);
 
     useEffect(() => {

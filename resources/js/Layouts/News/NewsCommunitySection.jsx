@@ -4,33 +4,6 @@ import { Clock, ChevronRight, Users } from "lucide-react";
 import axios from "axios";
 
 export function NewsCommunitySection() {
-    const communityFacilitiesNews = [
-        {
-            title: "New Community Center Opens in Remote Village",
-            excerpt:
-                "Modern facility now serves over 2,000 residents with education, healthcare, and community spaces.",
-            image: "https://images.unsplash.com/photo-1636987050384-9b079c700f63?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200",
-            date: "May 15, 2026",
-            readTime: "5 min read",
-        },
-        {
-            title: "Clean Water Access Expanded to 10 Villages",
-            excerpt:
-                "Water for Life program brings sustainable water solutions to underserved communities.",
-            image: "https://images.unsplash.com/photo-1556484687-30636164638b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200",
-            date: "April 10, 2026",
-            readTime: "5 min read",
-        },
-        {
-            title: "Mosque Renovation Transforms Community Hub",
-            excerpt:
-                "Historic renovation creates modern worship and learning center.",
-            image: "https://images.unsplash.com/photo-1754278583641-eb643828799e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
-            date: "March 5, 2026",
-            readTime: "4 min read",
-        },
-    ];
-
     const [newsArticles, setNewsArticles] = useState([]);
 
     useEffect(() => {

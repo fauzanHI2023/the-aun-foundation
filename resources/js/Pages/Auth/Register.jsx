@@ -1,3 +1,4 @@
+import GoogleButton from '@/Components/GoogleButton';
 import InputError from '@/Components/InputError';
 import InputLabel from '@/Components/InputLabel';
 import PrimaryButton from '@/Components/PrimaryButton';
@@ -15,7 +16,6 @@ export default function Register() {
 
     const submit = (e) => {
         e.preventDefault();
-
         post(route('register'), {
             onFinish: () => reset('password', 'password_confirmation'),
         });
@@ -24,6 +24,22 @@ export default function Register() {
     return (
         <GuestLayout>
             <Head title="Register" />
+
+            {/* Sign up dengan Google - untuk user biasa */}
+            <div className="mb-6">
+                <GoogleButton label="Daftar dengan Google" />
+            </div>
+
+            <div className="relative mb-6">
+                <div className="absolute inset-0 flex items-center">
+                    <div className="w-full border-t border-gray-300" />
+                </div>
+                <div className="relative flex justify-center text-sm">
+                    <span className="bg-white px-2 text-gray-500">
+                        atau daftar dengan email
+                    </span>
+                </div>
+            </div>
 
             <form onSubmit={submit}>
                 <div>
@@ -105,9 +121,9 @@ export default function Register() {
                 <div className="mt-4 flex items-center justify-end">
                     <Link
                         href={route('login')}
-                        className="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                        className="rounded-md text-sm text-gray-600 underline hover:text-gray-900"
                     >
-                        Already registered?
+                        Sudah punya akun?
                     </Link>
 
                     <PrimaryButton className="ms-4" disabled={processing}>

@@ -4,25 +4,6 @@ import { Clock, TrendingUp, ArrowRight } from "lucide-react";
 import axios from "axios";
 
 export function NewsEconomicSection() {
-    const economicNews = [
-        {
-            title: "50 Micro-Enterprises Launched This Quarter",
-            excerpt:
-                "Small business support program creates sustainable income for families.",
-            image: "https://images.unsplash.com/photo-1655720359248-eeace8c709c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200",
-            date: "March 15, 2026",
-            readTime: "7 min read",
-        },
-        {
-            title: "Vocational Training Equips 300 With New Skills",
-            excerpt:
-                "Skills development programs open doors to employment opportunities.",
-            image: "https://images.unsplash.com/photo-1630068846062-3ffe78aa5049?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
-            date: "February 28, 2026",
-            readTime: "5 min read",
-        },
-    ];
-
     const [newsArticles, setNewsArticles] = useState([]);
 
     useEffect(() => {

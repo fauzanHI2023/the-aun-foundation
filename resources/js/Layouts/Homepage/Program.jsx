@@ -3,41 +3,53 @@ import {
     Building2,
     GraduationCap,
     TrendingUp,
+    HeartHandshake,
     ArrowUpRight,
 } from "lucide-react";
 import { useState } from "react";
+import { Link } from "@inertiajs/react";
 
 const programs = [
     {
+        id: 1, // <-- WAJIB sama dengan id di tabel `programs`
         icon: Building2,
         title: "Community Facilities",
         description:
             "Building and improving essential infrastructure to strengthen communities and enhance quality of life.",
-        image: "/images/IMG_9777.jpg",
+        image: "/images/IMG_9777.webp",
         stat: "100+",
         statLabel: "Facilities Built",
-        color: "#754c24",
     },
     {
+        id: 2, // <-- sesuaikan
         icon: GraduationCap,
         title: "Education & Knowledge",
         description:
             "Empowering individuals through education, training, and access to learning opportunities.",
-        image: "/images/IMG_9848.jpg",
+        image: "/images/IMG_9848.webp",
         stat: "5,000+",
         statLabel: "Students Supported",
-        color: "#000000",
     },
     {
+        id: 3, // <-- sesuaikan
         icon: TrendingUp,
         title: "Economic Empowerment",
         description:
             "Supporting sustainable livelihoods and economic independence for vulnerable communities.",
-        image: "/images/Copy of 2025_03_15_16_33_IMG_3374.jpg",
+        image: "/images/Copy of 2025_03_15_16_33_IMG_3374.webp",
         stat: "2,500+",
         statLabel: "Families Empowered",
-        color: "#754c24",
     },
+    // {
+    //     id: 4, // <-- TODO: ganti sesuai id program ke-4 di database
+    //     icon: HeartHandshake,
+    //     title: "Health & Wellbeing", // <-- TODO: ganti judul sesuai program ke-4
+    //     description:
+    //         "Improving access to healthcare and promoting healthier, more resilient communities.", // <-- TODO: ganti deskripsi
+    //     image: "/images/IMG_9777.webp", // <-- TODO: ganti gambar program ke-4
+    //     stat: "1,000+", // <-- TODO: ganti angka
+    //     statLabel: "People Reached", // <-- TODO: ganti label
+    // },
 ];
 
 export function Programs() {
@@ -51,40 +63,36 @@ export function Programs() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="md:mb-16 mb:8"
+                    className="md:mb-16 mb-8"
                 >
                     <div className="flex items-center justify-between">
                         <div>
-                            <h2 className="text-4xl md:text-5xl mb-4 text-foreground font-semibold">
+                            <h2 className="text-4xl md:text-5xl mb-4 text-primary-black font-bold">
                                 Explore{" "}
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8B6835] to-[#D4A574]">
-                                    Programs
-                                </span>
+                                <span className="text-secondary">Programs</span>
                             </h2>
-                            <p className="text-foreground/60 max-w-2xl mx-auto">
+                            <p className="text-third max-w-2xl mx-auto">
                                 Creating Sustainable Impact
                             </p>
                         </div>
-                        <button className="hidden lg:flex items-center rounded-lg gap-2 px-6 border border-[#8B6835] text-[#8B6835] py-3 hover:bg-[#8B6835] hover:text-white transition-colors">
-                            <a
-                                href="/programs"
-                                className=" flex gap-2 lg:flex items-center hover:bg-[#8B6835]"
-                            >
-                                <span className="text-sm">View All</span>
-                                <ArrowUpRight className="w-4 h-4" />
-                            </a>
-                        </button>
+                        <Link
+                            href="/programs"
+                            className="hidden lg:flex items-center rounded-lg gap-2 px-6 border border-[#8B6835] text-[#8B6835] py-3 hover:bg-[#8B6835] hover:text-white transition-colors"
+                        >
+                            <span className="text-sm">View All</span>
+                            <ArrowUpRight className="w-4 h-4" />
+                        </Link>
                     </div>
                 </motion.div>
 
-                <div className="grid lg:grid-cols-3 gap-6">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {programs.map((program, index) => {
                         const Icon = program.icon;
                         const isHovered = hoveredIndex === index;
 
                         return (
                             <motion.div
-                                key={program.title}
+                                key={program.id}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
@@ -94,130 +102,76 @@ export function Programs() {
                                 }}
                                 onMouseEnter={() => setHoveredIndex(index)}
                                 onMouseLeave={() => setHoveredIndex(null)}
-                                className="group cursor-pointer relative overflow-hidden bg-white rounded-xl"
-                                style={{ borderRadius: "4px" }}
                             >
-                                <div className="relative h-80 overflow-hidden rounded-xl">
+                                <Link
+                                    href={route("programs.show", program.id)}
+                                    className="group relative block h-[420px] overflow-hidden rounded-2xl"
+                                >
+                                    {/* Image */}
                                     <img
                                         src={program.image}
                                         alt={program.title}
-                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                                     />
-                                    <div
-                                        className="absolute inset-0 transition-opacity duration-500"
-                                        style={{
-                                            background: `linear-gradient(to top, ${program.color}, transparent)`,
-                                            opacity: isHovered ? 0.9 : 0.6,
-                                        }}
-                                    ></div>
 
-                                    <div className="absolute top-6 left-6">
-                                        <div
-                                            className="w-12 h-12 flex items-center justify-center transition-colors duration-300"
-                                            style={{
-                                                backgroundColor: isHovered
-                                                    ? "white"
-                                                    : "rgba(255,255,255,0.2)",
-                                            }}
-                                        >
-                                            <Icon
-                                                className="w-6 h-6 transition-colors duration-300"
-                                                style={{
-                                                    color: isHovered
-                                                        ? program.color
-                                                        : "white",
-                                                }}
-                                            />
-                                        </div>
+                                    {/* Gradient overlay - always present, darkens on hover */}
+                                    <div
+                                        className="absolute inset-0 transition-all duration-500"
+                                        style={{
+                                            background:
+                                                "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.45) 35%, rgba(0,0,0,0.05) 65%, transparent 100%)",
+                                            opacity: isHovered ? 1 : 0.85,
+                                        }}
+                                    />
+
+                                    {/* Icon badge */}
+                                    <div className="absolute top-5 left-5 flex h-11 w-11 items-center justify-center rounded-md bg-white/15 backdrop-blur-sm transition-colors duration-300 group-hover:bg-white">
+                                        <Icon className="h-5 w-5 text-white transition-colors duration-300 group-hover:text-[#8B6835]" />
                                     </div>
 
-                                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                                        <h3 className="text-2xl font-bold mb-2 tracking-tight">
+                                    {/* Bottom content */}
+                                    <div className="absolute inset-x-0 bottom-0 p-6 text-white">
+                                        <h3 className="text-lg font-semibold leading-snug mb-2">
                                             {program.title}
                                         </h3>
+
+                                        {/* Description - fades/slides in on hover */}
                                         <p
-                                            className="text-sm text-white/90 mb-4 transition-all duration-300"
+                                            className="text-sm text-white/85 leading-relaxed transition-all duration-300"
                                             style={{
                                                 maxHeight: isHovered
-                                                    ? "100px"
-                                                    : "0",
+                                                    ? "120px"
+                                                    : "0px",
                                                 opacity: isHovered ? 1 : 0,
+                                                marginBottom: isHovered
+                                                    ? "0.75rem"
+                                                    : "0rem",
                                                 overflow: "hidden",
                                             }}
                                         >
                                             {program.description}
                                         </p>
-                                    </div>
-                                </div>
 
-                                <div className="p-6 bg-white">
-                                    <div className="flex items-center justify-between">
-                                        <div>
-                                            <div className="text-3xl font-bold text-black mb-1">
-                                                {program.stat}
-                                            </div>
-                                            <div className="text-xs text-black/60">
-                                                {program.statLabel}
-                                            </div>
-                                        </div>
+                                        {/* View Detail - fades/slides in on hover */}
                                         <div
-                                            className="w-10 h-10 flex items-center justify-center border transition-all duration-300"
+                                            className="flex items-center gap-2 transition-all duration-300"
                                             style={{
-                                                borderColor: isHovered
-                                                    ? program.color
-                                                    : "#e5e5e5",
-                                                backgroundColor: isHovered
-                                                    ? program.color
-                                                    : "transparent",
+                                                opacity: isHovered ? 1 : 0,
+                                                transform: isHovered
+                                                    ? "translateY(0)"
+                                                    : "translateY(8px)",
                                             }}
                                         >
-                                            <ArrowUpRight
-                                                className="w-5 h-5 transition-all duration-300"
-                                                style={{
-                                                    color: isHovered
-                                                        ? "white"
-                                                        : "#000",
-                                                    transform: isHovered
-                                                        ? "translate(2px, -2px)"
-                                                        : "translate(0, 0)",
-                                                }}
-                                            />
+                                            <span className="text-sm font-medium tracking-wide text-[#D9B78A]">
+                                                View Detail
+                                            </span>
+                                            <ArrowUpRight className="h-4 w-4 text-[#D9B78A]" />
                                         </div>
                                     </div>
-                                </div>
+                                </Link>
                             </motion.div>
                         );
                     })}
-                </div>
-            </div>
-
-            <div className="bg-[#f5f5f5] md:mt-32 mt-12">
-                <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-20">
-                    <div className="grid grid-cols-2 md:grid-cols-5 gap-12">
-                        {[
-                            { number: "10K+", label: "Lives Impacted" },
-                            { number: "100+", label: "Facilities" },
-                            { number: "5K+", label: "Students" },
-                            { number: "2.5K+", label: "Families" },
-                            { number: "50+", label: "Partners" },
-                        ].map((stat, i) => (
-                            <motion.div
-                                key={stat.label}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.1 }}
-                                className="text-center"
-                            >
-                                <div className="text-3xl font-bold text-black mb-2">
-                                    {stat.number}
-                                </div>
-                                <div className="text-xs text-black/60 tracking-wider">
-                                    {stat.label}
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
                 </div>
             </div>
         </section>

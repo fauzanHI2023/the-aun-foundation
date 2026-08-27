@@ -11,9 +11,9 @@ export function AboutSection() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h2 className="text-4xl md:text-5xl mb-4 text-foreground font-semibold">
+                        <h2 className="text-4xl md:text-5xl mb-4 text-primary-black font-bold">
                             Story{" "}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8B6835] to-[#D4A574]">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-grey-primary">
                                 Us
                             </span>
                         </h2>
@@ -52,17 +52,17 @@ export function AboutSection() {
                     >
                         <div className="grid grid-cols-2 gap-4">
                             <div className="space-y-4">
-                                <div className="bg-[#754c24] text-white p-8">
-                                    <div className="text-5xl font-bold mb-2">
+                                <div className="bg-primary-white text-primary-black p-8 rounded-xl">
+                                    <p className="text-4xl font-black mb-2">
                                         2025
-                                    </div>
-                                    <div className="text-sm text-white/80">
+                                    </p>
+                                    <p className="text-sm text-primary-black/80">
                                         Established
-                                    </div>
+                                    </p>
                                 </div>
                                 <div className="relative overflow-hidden h-72 rounded-lg">
                                     <img
-                                        src="/images/IMG_3644.jpg"
+                                        src="/images/IMG_3644.webp"
                                         alt="Community support"
                                         className="w-full h-full object-cover"
                                     />
@@ -76,13 +76,13 @@ export function AboutSection() {
                                         className="w-full h-full object-cover"
                                     />
                                 </div>
-                                <div className="bg-black text-white p-8">
-                                    <div className="text-5xl font-bold mb-2">
+                                <div className="bg-primary-white text-primary-black p-8 rounded-xl">
+                                    <p className="text-5xl font-bold mb-2">
                                         50+
-                                    </div>
-                                    <div className="text-sm text-white/80">
+                                    </p>
+                                    <p className="text-sm text-primary-black/80">
                                         Partners
-                                    </div>
+                                    </p>
                                 </div>
                             </div>
                         </div>

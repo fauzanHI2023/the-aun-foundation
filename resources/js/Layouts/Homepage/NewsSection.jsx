@@ -36,7 +36,7 @@ export function NewsSection() {
                         <div>
                             <h2 className="text-4xl md:text-5xl mb-4 text-foreground font-semibold">
                                 Stories{" "}
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8B6835] to-[#D4A574]">
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-primary">
                                     Updates
                                 </span>
                             </h2>

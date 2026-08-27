@@ -1,22 +1,27 @@
 import { Header } from "@/Layouts/Homepage/Header";
 import { Footer } from "@/Layouts/Homepage/Footer";
 import { ProgramsBanner } from "@/Layouts/Programs/ProgramsSection";
-import { ProgramsCompact } from "@/Layouts/Programs/ProgramsCompact";
+import { ProgramsCommunity } from "@/Layouts/Programs/ProgramsCommunity";
 import { ProgramHeroSection } from "@/Layouts/Programs/ProgramHeroSection";
 import { SeasonalProgramSection } from "@/Layouts/Programs/SeasonalProgramSection";
+import CTASection from "@/Layouts/Campaign/CTASection";
+import { ProgramsEducation } from "@/Layouts/Programs/ProgramsEducation";
+import { ProgramsEconomic } from "@/Layouts/Programs/ProgramsEconomic";
+import { ProgramsRamadhan } from "@/Layouts/Programs/ProgramsRamadhan";
+import { ProgramsQurban } from "@/Layouts/Programs/ProgramsQurban";
 
 export default function Programs() {
     return (
         <div className="min-h-screen bg-white">
-            <Header />
-
-            <main className="pt-20">
+            <main>
                 <ProgramHeroSection />
-                <ProgramsBanner />
-                <SeasonalProgramSection />
+                <ProgramsCommunity />
+                <ProgramsEducation />
+                <ProgramsEconomic />
+                <ProgramsRamadhan />
+                <ProgramsQurban />
+                <CTASection />
             </main>
-
-            <Footer />
         </div>
     );
 }

@@ -1,4 +1,5 @@
 import Checkbox from '@/Components/Checkbox';
+import GoogleButton from '@/Components/GoogleButton';
 import InputError from '@/Components/InputError';
 import InputLabel from '@/Components/InputLabel';
 import PrimaryButton from '@/Components/PrimaryButton';
@@ -15,7 +16,6 @@ export default function Login({ status, canResetPassword }) {
 
     const submit = (e) => {
         e.preventDefault();
-
         post(route('login'), {
             onFinish: () => reset('password'),
         });
@@ -30,6 +30,22 @@ export default function Login({ status, canResetPassword }) {
                     {status}
                 </div>
             )}
+
+            {/* Sign in dengan Google - untuk user biasa */}
+            <div className="mb-6">
+                <GoogleButton label="Masuk dengan Google" />
+            </div>
+
+            <div className="relative mb-6">
+                <div className="absolute inset-0 flex items-center">
+                    <div className="w-full border-t border-gray-300" />
+                </div>
+                <div className="relative flex justify-center text-sm">
+                    <span className="bg-white px-2 text-gray-500">
+                        atau login dengan email
+                    </span>
+                </div>
+            </div>
 
             <form onSubmit={submit}>
                 <div>
@@ -84,7 +100,7 @@ export default function Login({ status, canResetPassword }) {
                     {canResetPassword && (
                         <Link
                             href={route('password.request')}
-                            className="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                            className="rounded-md text-sm text-gray-600 underline hover:text-gray-900"
                         >
                             Forgot your password?
                         </Link>
@@ -95,6 +111,13 @@ export default function Login({ status, canResetPassword }) {
                     </PrimaryButton>
                 </div>
             </form>
+
+            <div className="mt-4 text-center text-sm text-gray-600">
+                Belum punya akun?{' '}
+                <Link href={route('register')} className="underline">
+                    Daftar
+                </Link>
+            </div>
         </GuestLayout>
     );
 }
