@@ -3,7 +3,7 @@ name: Deploy to Shared Hosting
 on:
   push:
     branches:
-      - main   # ganti sesuai branch produksi kamu
+      - Main   # ganti sesuai branch produksi kamu
 
 jobs:
   deploy:
