@@ -3,7 +3,7 @@ name: Deploy to Shared Hosting
 on:
   push:
     branches:
-      - Main   # ganti sesuai branch produksi kamu
+      - main   # ganti sesuai branch produksi kamu
 
 jobs:
   deploy:
@@ -16,7 +16,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.5'
+          php-version: '8.2'
           extensions: mbstring, bcmath, ctype, curl, dom, fileinfo, json, mysqli, openssl, pdo, tokenizer, xml
           coverage: none
 
@@ -56,21 +56,29 @@ jobs:
           mkdir -p ~/.ssh
           ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
-      - name: Deploy via rsync
+      - name: Install lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: Deploy via SFTP (lftp mirror)
         run: |
-          rsync -avz --delete \
-            -e "ssh -p ${{ secrets.SSH_PORT }}" \
-            --exclude='.git' \
-            --exclude='.github' \
-            --exclude='node_modules' \
-            --exclude='tests' \
-            --exclude='.env' \
-            --exclude='.env.example' \
-            --exclude='storage/app/public' \
-            --exclude='storage/framework' \
-            --exclude='storage/logs' \
-            --exclude='public/storage' \
-            ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.DEPLOY_PATH }}
+          lftp -e "
+          set sftp:auto-confirm yes;
+          set sftp:connect-program 'ssh -a -x -p ${{ secrets.SSH_PORT }}';
+          open -u ${{ secrets.SSH_USER }}, sftp://${{ secrets.SSH_HOST }};
+          mirror -R --delete --verbose \
+            --exclude-glob .git/ \
+            --exclude-glob .github/ \
+            --exclude-glob node_modules/ \
+            --exclude-glob tests/ \
+            --exclude .env \
+            --exclude .env.example \
+            --exclude-glob storage/app/public/ \
+            --exclude-glob storage/framework/ \
+            --exclude-glob storage/logs/ \
+            --exclude-glob public/storage \
+            ./ ${{ secrets.DEPLOY_PATH }};
+          bye
+          "
 
       - name: Run post-deploy commands
         run: |
