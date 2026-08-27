@@ -21,7 +21,7 @@ use App\Http\Controllers\ProgramDonationController;
 use App\Http\Controllers\DonationCheckController;
 use App\Http\Controllers\DoitpayVaCallbackController;
 use App\Http\Controllers\DoitpayQrisCallbackController;
-use App\Http\Controllers\DoitpayEwalletCallbackController;
+use App\Http\Controllers\DoitpayEWalletCallbackController;
 use App\Http\Controllers\DonorDashboardController;
 use Carbon\Carbon;
 use App\Services\ClaudeService;
@@ -263,7 +263,7 @@ Route::post('/v1.0/qr/qr-mpm-notify', DoitpayQrisCallbackController::class)
     ->name('doitpay.qris-callback')
     ->withoutMiddleware(\Illuminate\Foundation\Http\Middleware\ValidateCsrfToken::class);
 
-Route::post('/v1.0/debit/notify', DoitpayEwalletCallbackController::class)
+Route::post('/v1.0/debit/notify', DoitpayEWalletCallbackController::class)
     ->name('doitpay.ewallet-callback')
     ->withoutMiddleware(\Illuminate\Foundation\Http\Middleware\ValidateCsrfToken::class);
 

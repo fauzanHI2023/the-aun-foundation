@@ -7,7 +7,7 @@ use App\Services\DoitpayService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
-class DoitpayEwalletCallbackController extends Controller
+class DoitpayEWalletCallbackController extends Controller
 {
     public function __invoke(Request $request, DoitpayService $doitpay)
     {
