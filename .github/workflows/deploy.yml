@@ -56,29 +56,31 @@ jobs:
           mkdir -p ~/.ssh
           ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
-      - name: Install lftp
-        run: sudo apt-get update && sudo apt-get install -y lftp
-
-      - name: Deploy via SFTP (lftp mirror)
+      - name: Package release into a single archive
         run: |
-          lftp -e "
-          set sftp:auto-confirm yes;
-          set sftp:connect-program 'ssh -a -x -p ${{ secrets.SSH_PORT }}';
-          open -u ${{ secrets.SSH_USER }}, sftp://${{ secrets.SSH_HOST }};
-          mirror -R --delete --verbose \
-            --exclude-glob .git/ \
-            --exclude-glob .github/ \
-            --exclude-glob node_modules/ \
-            --exclude-glob tests/ \
-            --exclude .env \
-            --exclude .env.example \
-            --exclude-glob storage/app/public/ \
-            --exclude-glob storage/framework/ \
-            --exclude-glob storage/logs/ \
-            --exclude-glob public/storage \
-            ./ ${{ secrets.DEPLOY_PATH }};
-          bye
-          "
+          tar czf release.tar.gz \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='node_modules' \
+            --exclude='tests' \
+            --exclude='.env' \
+            --exclude='.env.example' \
+            --exclude='storage/app/public' \
+            --exclude='storage/framework' \
+            --exclude='storage/logs' \
+            --exclude='public/storage' \
+            --exclude='release.tar.gz' \
+            .
+
+      - name: Upload archive via SCP (single file, fast)
+        run: |
+          scp -P ${{ secrets.SSH_PORT }} -o StrictHostKeyChecking=no \
+            release.tar.gz ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.DEPLOY_PATH }}/release.tar.gz
+
+      - name: Extract archive on server
+        run: |
+          ssh -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
+          "cd ${{ secrets.DEPLOY_PATH }} && tar xzf release.tar.gz && rm release.tar.gz"
 
       - name: Run post-deploy commands
         run: |
