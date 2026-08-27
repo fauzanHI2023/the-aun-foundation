@@ -2,7 +2,7 @@ import TrendChart from "./TrendChart";
 import HeatmapCard from "./HeatmapCard";
 import StatusDonut from "./StatusDonut";
 import PaymentMethods from "./PaymentMethods";
-import AiInsight from "./AiInsight";
+import { AiInsight } from "./AiInsight";
 
 export default function MainGrid({
     trend,
